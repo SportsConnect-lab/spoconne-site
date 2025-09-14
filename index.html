@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OTOBA | 学生チーム × プロコーチ × 企業</title>
+  <meta name="description" content="学生チームとプロコーチを、企業とのパートナー協定でつなぐ OTOBA のランディングページ" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: "#0ea5e9", dark: "#0284c7", light: "#38bdf8" },
+            accent: { DEFAULT: "#10b981" }
+          },
+          fontFamily: {
+            sans: ["Inter","Noto Sans JP","system-ui","-apple-system","Segoe UI","Roboto","Helvetica","Arial","sans-serif"]
+          },
+          boxShadow: { card: "0 10px 25px -10px rgba(2,8,23,.15)" }
+        }
+      }
+    }
+  </script>
+
+  <!-- 追加CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Hero オーバーレイ */
+    .hero:before {
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(2,6,23,.55), rgba(2,6,23,.35));
+    }
+  </style>
+</head>
+<body class="antialiased font-sans text-slate-800">
+
+<!-- ===== Header ===== -->
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="font-extrabold tracking-tight text-lg sm:text-xl text-brand">OTOBA</a>
+    <nav class="hidden md:flex gap-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-brand font-bold text-brand">コンセプト</a>
+      <a href="programs.html" class="hover:text-brand">プログラム</a>
+      <a href="cases.html" class="hover:text-brand">事例</a>
+      <a href="price.html" class="hover:text-brand">料金</a>
+      <a href="contact.html" class="hover:text-brand">問い合わせ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden sm:inline-block px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition shadow">
+        お問い合わせ
+      </a>
+      <button id="menuBtn" aria-label="メニュー"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">☰</button>
+    </div>
+  </div>
+  <!-- モバイルナビ -->
+  <nav id="mobileNav" class="md:hidden hidden border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-2 text-sm">
+      <a class="py-2" href="index.html">コンセプト</a>
+      <a class="py-2" href="programs.html">プログラム</a>
+      <a class="py-2" href="cases.html">事例</a>
+      <a class="py-2" href="price.html">料金</a>
+      <a class="py-2" href="contact.html">問い合わせ</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top" class="pt-16">
+  <!-- ===== Hero ===== -->
+  <section class="relative hero">
+    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1920&auto=format&fit=crop"
+         alt="チームスポーツの写真" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36 text-white">
+      <div class="max-w-3xl">
+        <p class="text-xs sm:text-sm uppercase tracking-[.25em] mb-3 text-white/80">学生チーム × プロコーチ × 企業パートナー</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+          学生チームとプロコーチを、<br class="hidden sm:block"/>企業とのパートナー協定でつなぐ新しいモデル
+        </h1>
+        <p class="mt-4 text-lg sm:text-xl text-white/90">
+          チームの成長、コーチの活躍、企業の社会的価値とブランドを同時に前進させる。
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+  <!-- チーム：オレンジ -->
+  <a href="#for-teams"
+   class="px-5 py-3 rounded-xl bg-orange-500 text-white font-semibold 
+          hover:bg-orange-600 hover:scale-105 transition transform duration-200 shadow">
+   チームの方
+</a>
+
+
+  <!-- コーチ：青 -->
+  <a href="#for-coaches"
+   class="px-5 py-3 rounded-xl font-semibold text-white bg-sky-500
+          transition transform duration-200
+          hover:bg-sky-600 hover:scale-105 hover:shadow-lg">
+   コーチの方
+</a>
+
+
+
+  <!-- 企業：緑 -->
+  <a href="#for-companies"
+   class="px-5 py-3 rounded-xl font-semibold text-white bg-emerald-500
+          transition transform duration-200
+          hover:bg-emerald-600 hover:scale-105 hover:shadow-lg">
+   企業の方
+</a>
+  <!-- 始め方：紫 -->
+  <a href="#getting-started"
+   class="px-5 py-3 rounded-xl font-semibold text-white bg-purple-500
+          transition transform duration-200
+          hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+   始め方
+</a>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 中腹：課題と解決策（対象別） ===== -->
+ <section id="needs" class="reveal　py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl sm:text-3xl font-bold text-center">こんな悩みはありませんか？</h2>
+    <p class="mt-3 text-center text-slate-600">チーム／コーチ／企業の“困りごと”を OTOBA が解決します。</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+
+  <!-- チーム：オレンジ -->
+  <div class="group relative p-6 rounded-2xl border border-slate-200 bg-slate-900 overflow-hidden text-white shadow-md">
+    <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=1200&auto=format&fit=crop"
+         alt="チームの背景"
+         class="absolute inset-0 w-full h-full object-cover opacity-40 transition duration-500 group-hover:opacity-60">
+    <!-- 🔸黒→オレンジのティントに変更 -->
+    <div class="absolute inset-0 bg-orange-500/30 transition duration-500 group-hover:bg-orange-500/15"></div>
+
+    <div class="relative">
+      <h3 class="font-bold text-lg text-orange-200">チームの課題</h3>
+      <ul class="mt-4 space-y-2">
+        <li>・専門的な指導者が見つからない</li>
+        <li>・強化費や備品費の捻出が難しい</li>
+        <li>・学業と競技の両立に仕組みがない</li>
+      </ul>
+      <div class="mt-5 p-4 rounded-xl bg-white/90 border border-orange-300 text-slate-800 shadow">
+        <p class="text-orange-600 font-semibold">OTOBAの解決策</p>
+        <ul class="mt-2 space-y-1">
+          <li>・競技別に実績あるプロコーチを推薦・面談</li>
+          <li>・企業との三者協定で指導・設備を継続支援</li>
+          <li>・学業両立の時間割テンプレ／レポート運用</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- コーチ：青 -->
+  <div class="group relative p-6 rounded-2xl border border-slate-200 bg-slate-900 overflow-hidden text-white shadow-md">
+    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop"
+         alt="コーチの背景"
+         class="absolute inset-0 w-full h-full object-cover opacity-40 transition duration-500 group-hover:opacity-60">
+    <!-- 🔹青ティント -->
+    <div class="absolute inset-0 bg-sky-500/30 transition duration-500 group-hover:bg-sky-500/15"></div>
+
+    <div class="relative">
+      <h3 class="font-bold text-lg text-sky-200">コーチの課題</h3>
+      <ul class="mt-4 space-y-2">
+        <li>・継続契約と活動環境が不安定</li>
+        <li>・新しいチームと出会う機会が限られる</li>
+        <li>・成果が可視化されにくい</li>
+      </ul>
+      <div class="mt-5 p-4 rounded-xl bg-white/90 border border-sky-300 text-slate-800 shadow">
+        <p class="text-sky-600 font-semibold">OTOBAの解決策</p>
+        <ul class="mt-2 space-y-1">
+          <li>・企業協定に基づく安定した契約と環境整備</li>
+          <li>・複数チームとのマッチング提案と調整代行</li>
+          <li>・KPI設計／活動レポートのテンプレ・広報支援</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 企業：緑 -->
+  <div class="group relative p-6 rounded-2xl border border-slate-200 bg-slate-900 overflow-hidden text-white shadow-md">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+         alt="企業の背景"
+         class="absolute inset-0 w-full h-full object-cover opacity-40 transition duration-500 group-hover:opacity-60">
+    <!-- 🟢緑ティント -->
+    <div class="absolute inset-0 bg-emerald-500/30 transition duration-500 group-hover:bg-emerald-500/15"></div>
+
+    <div class="relative">
+      <h3 class="font-bold text-lg text-emerald-200">企業の課題</h3>
+      <ul class="mt-4 space-y-2">
+        <li>・教育/地域への貢献が単発で終わる</li>
+        <li>・成果やブランド効果が測りづらい</li>
+        <li>・社内リソースに負担をかけたくない</li>
+      </ul>
+      <div class="mt-5 p-4 rounded-xl bg-white/90 border border-emerald-300 text-slate-800 shadow">
+        <p class="text-emerald-600 font-semibold">OTOBAの解決策</p>
+        <ul class="mt-2 space-y-1">
+          <li>・年間計画＋協定で継続的な取り組みに</li>
+          <li>・KPIダッシュボード／定期レポーティング</li>
+          <li>・調整/運用は OTOBA が伴走（内製最小化）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</section>
+
+
+  <!-- ===== 始め方：対象をボタンで切替 ===== -->
+  <section id="getting-started" class="py-12 sm:py-16 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center">サービスの始め方</h2>
+      <p class="mt-3 text-center text-slate-600">対象を選ぶと、最適なステップが表示されます。</p>
+
+      <!-- tabs -->
+      <div class="mt-6 flex justify-center">
+        <div class="inline-flex rounded-xl border border-slate-200 bg-white p-1">
+          <button class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold" data-target="tab-teams" data-active="true">チームの方</button>
+          <button class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold" data-target="tab-coaches">コーチの方</button>
+          <button class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold" data-target="tab-companies">企業の方</button>
+        </div>
+      </div>
+
+      <!-- panels -->
+      <div class="mt-8 grid gap-6">
+        <!-- Teams -->
+        <div id="tab-teams" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6">
+          <ol class="grid gap-4">
+            <li class="flex gap-4"><span class="step">STEP 1</span><div><p class="font-semibold">ヒアリング</p><p class="text-slate-600 text-sm">課題・目標・年間計画の希望を伺います。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 2</span><div><p class="font-semibold">コーチ推薦・面談</p><p class="text-slate-600 text-sm">競技・地域に合うコーチを推薦しオンライン面談。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 3</span><div><p class="font-semibold">協定ドラフト</p><p class="text-slate-600 text-sm">企業を含む三者協定の内容・期間・費用を定義。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 4</span><div><p class="font-semibold">開始・レポート</p><p class="text-slate-600 text-sm">月次レポート／振り返りで運用を最適化。</p></div></li>
+          </ol>
+        </div>
+
+        <!-- Coaches -->
+        <div id="tab-coaches" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6 hidden">
+          <ol class="grid gap-4">
+            <li class="flex gap-4"><span class="step">STEP 1</span><div><p class="font-semibold">登録・プロフィール</p><p class="text-slate-600 text-sm">専門分野・実績・稼働条件を登録。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 2</span><div><p class="font-semibold">マッチング</p><p class="text-slate-600 text-sm">候補チームの紹介→面談→指導計画の作成。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 3</span><div><p class="font-semibold">協定締結</p><p class="text-slate-600 text-sm">企業協定により報酬・頻度・KPIを明確化。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 4</span><div><p class="font-semibold">活動・可視化</p><p class="text-slate-600 text-sm">レポートテンプレで成果を可視化・発信。</p></div></li>
+          </ol>
+        </div>
+
+        <!-- Companies -->
+        <div id="tab-companies" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6 hidden">
+          <ol class="grid gap-4">
+            <li class="flex gap-4"><span class="step">STEP 1</span><div><p class="font-semibold">目的・KPI定義</p><p class="text-slate-600 text-sm">CSR/CSV・ブランドと整合するKPIを設計。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 2</span><div><p class="font-semibold">対象選定</p><p class="text-slate-600 text-sm">地域・競技・規模に応じてチーム/コーチを推薦。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 3</span><div><p class="font-semibold">三者協定</p><p class="text-slate-600 text-sm">期間・支援内容・報告仕様を明確化して締結。</p></div></li>
+            <li class="flex gap-4"><span class="step">STEP 4</span><div><p class="font-semibold">運用・効果測定</p><p class="text-slate-600 text-sm">ダッシュボード/月次レポートで可視化・改善。</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 対象別セクション ===== -->
+  <section id="for-teams" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">チームの方へ</h2>
+          <p class="mt-3 text-slate-600">プロコーチの継続指導と協定ベースの支援で、競技力と学びの両立を後押しします。</p>
+          <ul class="mt-6 grid gap-3">
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>年間計画ベースの指導と練習設計</span></li>
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>設備・備品の整備を協定内で支援</span></li>
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>キャリア教育・見学/講話などの連携</span></li>
+          </ul>
+          <a href="contact.html" class="mt-6 inline-flex px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50">相談してみる</a>
+        </div>
+        <div class="aspect-video rounded-2xl overflow-hidden shadow-card">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop" alt="学生チームの様子" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="for-coaches" class="py-16 sm:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="order-2 lg:order-1 aspect-video rounded-2xl overflow-hidden shadow-card">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1600&auto=format&fit=crop" alt="コーチングの様子" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <h2 class="text-2xl sm:text-3xl font-bold">コーチの方へ</h2>
+          <p class="mt-3 text-slate-600">企業協定で安定契約・活動環境を整備。複数チームで専門性を発揮し、成果を可視化します。</p>
+          <ul class="mt-6 grid gap-3">
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>協定にもとづく報酬と条件の明確化</span></li>
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>複数チーム/カテゴリのマッチング機会</span></li>
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>KPI・レポートで成果を可視化/発信</span></li>
+          </ul>
+          <a href="contact.html" class="mt-6 inline-flex px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-100">登録する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="for-companies" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">企業の方へ</h2>
+          <p class="mt-3 text-slate-600">次世代人材育成に参画し、教育・スポーツ・地域への貢献をブランド価値に転化。KPIやレポート設計で透明に運用します。</p>
+          <ul class="mt-6 grid gap-3">
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-accent" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>学生チーム×プロコーチの協働で社会的インパクト</span></li>
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-accent" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>CSR/CSVとブランド資産を長期形成</span></li>
+            <li class="flex gap-3 items-start"><svg class="w-5 h-5 mt-1 text-accent" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>KPI・ダッシュボードで成果を可視化</span></li>
+          </ul>
+          <a href="contact.html" class="mt-6 inline-flex px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50">資料請求</a>
+        </div>
+        <div class="aspect-video rounded-2xl overflow-hidden shadow-card">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop" alt="企業イメージ" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center">よくある質問</h2>
+      <dl class="mt-10 grid gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <dt class="font-semibold">スポンサー募集ではない？</dt>
+          <dd class="mt-2 text-slate-600">はい。OTOBA は「学生チーム×プロコーチ」を企業とのパートナー協定で結ぶモデルです。資金だけでなく、指導・教育・社会貢献を包括設計します。</dd>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <dt class="font-semibold">契約期間・費用は？</dt>
+          <dd class="mt-2 text-slate-600">目的と規模で変動します。期間・指導頻度・レポート仕様を定めた上で見積提示します。</dd>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200">
+          <dt class="font-semibold">対応地域は？</dt>
+          <dd class="mt-2 text-slate-600">全国対応（順次拡大）。オンライン×オフラインのハイブリッド運用も可能です。</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="py-16 sm:py-24 bg-slate-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center">お問い合わせ</h2>
+      <p class="mt-3 text-center text-white/80">導入相談・資料請求はこちら</p>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mt-10 grid gap-4" action="/contact.html?submitted=1">
+  <!-- Netlify用: フォーム名 -->
+  <input type="hidden" name="form-name" value="contact">
+  <!-- Bot対策（人間は触らない隠し入力） -->
+  <p class="hidden">
+    <label>Do not fill this out: <input name="bot-field"></label>
+  </p>
+
+  <div class="grid sm:grid-cols-3 gap-4">
+    <div class="sm:col-span-1">
+      <label class="block text-sm mb-1">区分</label>
+      <select name="type" class="w-full px-4 py-3 rounded-xl text-slate-900">
+        <option value="チーム">チーム</option>
+        <option value="コーチ">コーチ</option>
+        <option value="企業">企業</option>
+      </select>
+    </div>
+
+    <div class="sm:col-span-1">
+      <label class="block text-sm mb-1">お名前</label>
+      <input type="text" name="name" class="w-full px-4 py-3 rounded-xl text-slate-900" placeholder="山田 太郎" required>
+    </div>
+
+    <div class="sm:col-span-1">
+      <label class="block text-sm mb-1">メール</label>
+      <input type="email" name="email" class="w-full px-4 py-3 rounded-xl text-slate-900" placeholder="you@example.com" required>
+    </div>
+  </div>
+
+  <div>
+    <label class="block text-sm mb-1">内容</label>
+    <textarea name="message" rows="5" class="w-full px-4 py-3 rounded-xl text-slate-900" placeholder="ご相談内容を記入" required></textarea>
+  </div>
+
+  <button type="submit" class="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand-dark">
+    送信
+  </button>
+  <p class="text-xs text-white/70 mt-2">※Netlify Forms 経由で送信されます。</p>
+</form>
+
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="py-10 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">© <span id="y"></span> OTOBA</p>
+      <nav class="text-sm text-slate-600 flex gap-5">
+        <a href="#" class="hover:text-slate-900">個人情報保護方針</a>
+        <a href="contact.html" class="hover:text-slate-900">お問い合わせ</a>
+      </nav>
+    </div>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
