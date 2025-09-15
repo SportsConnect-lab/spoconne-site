@@ -18,6 +18,18 @@
     b.addEventListener("click", ()=> show(b.dataset.target));
   });
 })();
+// Netlify フォーム送信完了を検知してメッセージ表示
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.search.includes("submitted=true")) {
+    const success = document.getElementById("success-message");
+    if (success) {
+      success.classList.remove("hidden");
+      // 数秒後に自動で消す場合は以下を有効化
+      // setTimeout(() => success.classList.add("hidden"), 5000);
+    }
+  }
+});
+
 
 // ===== モバイルナビ =====
 (function(){
