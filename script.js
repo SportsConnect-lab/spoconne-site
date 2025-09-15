@@ -1,66 +1,55 @@
-// ===== 年の自動表示 =====
-(function(){
-  const y=document.getElementById("y");
-  if(y) y.textContent=new Date().getFullYear();
+// ==== 年の自動表示 ====
+(function () {
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
 })();
 
-// ===== 始め方：タブ切替 =====
-(function(){
-  const tabs=document.querySelectorAll(".tab-btn");
-  const panels=document.querySelectorAll(".tab-panel");
-  if(!tabs.length) return;
-
-  function show(targetId){
-    tabs.forEach(b=>b.dataset.active=(b.dataset.target===targetId)?"true":"false");
-    panels.forEach(p=>p.classList.toggle("hidden", p.id!==targetId));
-  }
-  tabs.forEach(b=>{
-    b.addEventListener("click", ()=> show(b.dataset.target));
-  });
-})();
-// Netlify フォーム送信完了を検知してメッセージ表示
-document.addEventListener("DOMContentLoaded", () => {
-  if (window.location.search.includes("submitted=true")) {
-    const success = document.getElementById("success-message");
-    if (success) {
-      success.classList.remove("hidden");
-      // 数秒後に自動で消す場合は以下を有効化
-      // setTimeout(() => success.classList.add("hidden"), 5000);
-    }
-  }
-});
-// script.js に追加
+// ==== タブ切替 ====
 document.addEventListener("DOMContentLoaded", () => {
   const tabButtons = document.querySelectorAll(".tab-btn");
   const tabPanels = document.querySelectorAll(".tab-panel");
 
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // すべてのボタンから active 状態を外す
-      tabButtons.forEach((b) =>
-        b.classList.remove("bg-brand", "text-white")
-      );
+  if (!tabButtons.length) return;
 
-      // クリックされたボタンに active 状態を付与
-      btn.classList.add("bg-brand", "text-white");
+  const show = (btn) => {
+    // すべてのボタンから active クラスを外す
+    tabButtons.forEach(b => {
+      b.classList.remove("bg-brand", "text-white", "bg-sky-500", "bg-green-500");
+    });
 
-      // 全てのパネルを非表示
-      tabPanels.forEach((panel) => panel.classList.add("hidden"));
+    // 押されたボタンに応じて色付け
+    if (btn.dataset.target === "tab-teams") {
+      btn.classList.add("bg-brand", "text-white"); // オレンジ
+    } else if (btn.dataset.target === "tab-coaches") {
+      btn.classList.add("bg-sky-500", "text-white"); // 水色
+    } else if (btn.dataset.target === "tab-companies") {
+      btn.classList.add("bg-green-500", "text-white"); // 緑
+    }
 
-      // 対応するパネルを表示
-      const target = document.getElementById(btn.dataset.target);
-      if (target) {
-        target.classList.remove("hidden");
-      }
+    // 全パネルを非表示
+    tabPanels.forEach(p => p.classList.add("hidden"));
+
+    // 対応パネルを表示
+    const target = document.getElementById(btn.dataset.target);
+    if (target) target.classList.remove("hidden");
+  };
+
+  // ボタンにクリックイベント付与
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      show(btn);
     });
   });
+
+  // 初期表示（最初のボタンを有効化）
+  show(tabButtons[0]);
 });
 
-
-// ===== モバイルナビ =====
-(function(){
-  const btn=document.getElementById("menuBtn");
-  const nav=document.getElementById("mobileNav");
-  if(!btn || !nav) return;
-  btn.addEventListener("click", ()=> nav.classList.toggle("hidden"));
+// ==== モバイルナビ ====
+(function () {
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mobileNav");
+  if (!btn || !nav) return;
+  btn.addEventListener("click", () => nav.classList.toggle("hidden"));
 })();

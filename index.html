@@ -44,6 +44,21 @@
     /* いずれかが :target のときはデフォルトを消す */
     .tab-panels:has(.tab-panel:target) .tab-panel[data-default="true"] { display: none; }
   </style>
+<style>
+/* タブの色分け */
+.tab-btn[data-target="tab-teams"].active {
+  background-color: #f97316; /* オレンジ */
+  color: white;
+}
+.tab-btn[data-target="tab-coaches"].active {
+  background-color: #3b82f6; /* 水色 */
+  color: white;
+}
+.tab-btn[data-target="tab-companies"].active {
+  background-color: #22c55e; /* 緑 */
+  color: white;
+}
+</style>
 
   <style>
     /* Hero オーバーレイ */
@@ -214,19 +229,21 @@
       <!-- tabs -->
       <!-- tabs -->
 <div class="mt-6 flex justify-center" id="gs-tabs">
-  <div class="inline-flex rounded-xl border border-slate-200 bg-white p-1" role="tablist" aria-label="サービスの始め方">
-    <button type="button" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
-            data-target="tab-teams" data-active="true" role="tab" aria-controls="tab-teams" aria-selected="true">
-      チームの方
-    </button>
-    <button type="button" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
-            data-target="tab-coaches" role="tab" aria-controls="tab-coaches" aria-selected="false">
-      コーチの方
-    </button>
-    <button type="button" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
-            data-target="tab-companies" role="tab" aria-controls="tab-companies" aria-selected="false">
-      企業の方
-    </button>
+<div class="inline-flex rounded-xl border border-slate-200 bg-white p-1 gap-1">
+  <button class="tab-btn"
+          data-target="tab-teams"
+          data-type="team"
+          data-active="true">チームの方</button>
+
+  <button class="tab-btn"
+          data-target="tab-coaches"
+          data-type="coach">コーチの方</button>
+
+  <button class="tab-btn"
+          data-target="tab-companies"
+          data-type="company">企業の方</button>
+</div>
+
   </div>
 </div>
 
