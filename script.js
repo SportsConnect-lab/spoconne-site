@@ -29,6 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+// script.js に追加
+document.addEventListener("DOMContentLoaded", () => {
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // すべてのボタンから active 状態を外す
+      tabButtons.forEach((b) =>
+        b.classList.remove("bg-brand", "text-white")
+      );
+
+      // クリックされたボタンに active 状態を付与
+      btn.classList.add("bg-brand", "text-white");
+
+      // 全てのパネルを非表示
+      tabPanels.forEach((panel) => panel.classList.add("hidden"));
+
+      // 対応するパネルを表示
+      const target = document.getElementById(btn.dataset.target);
+      if (target) {
+        target.classList.remove("hidden");
+      }
+    });
+  });
+});
 
 
 // ===== モバイルナビ =====
