@@ -64,16 +64,20 @@
       </div>
 
       <!-- Netlify Forms 本体 -->
-      <form name="contact"
-            method="POST"
-            data-netlify="true"
-            
-            class="mt-10 grid gap-4">
+      <form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  action="/thanks.html"   <!-- 送信後は必ずこの固定ページへ -->
+  class="mt-10 grid gap-4"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <!-- （任意）スパム対策 -->
+  <p class="hidden"><label>Don’t fill: <input name="bot-field" /></label></p>
 
-        <!-- Netlify 用 hidden フィールド（必須） -->
-        <input type="hidden" name="form-name" value="contact" />
-        <!-- Honeypot（任意：スパム対策） -->
-        <p class="hidden"><label>Don’t fill: <input name="bot-field"></label></p>
+  <!-- ここ以下は今の項目のままでOK -->
+  ...
+</form>
 
         <div class="grid sm:grid-cols-3 gap-4">
           <div class="sm:col-span-1">
