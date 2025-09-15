@@ -526,6 +526,58 @@
   }
 })();
 </script>
+<script>
+(() => {
+  function ready(fn){
+    if (document.readyState !== 'loading') { fn(); }
+    else { document.addEventListener('DOMContentLoaded', fn); }
+  }
+
+  ready(function () {
+    const buttons = document.querySelectorAll('#getting-started .tab-btn');
+    const panels  = document.querySelectorAll('#getting-started .tab-panel');
+    if (!buttons.length) return;
+
+    const colors = {
+      "tab-teams": "bg-orange-500 text-white",
+      "tab-coaches": "bg-sky-500 text-white",
+      "tab-companies": "bg-emerald-500 text-white"
+    };
+
+    const show = (id) => {
+      // パネル切替
+      panels.forEach(p => p.classList.add('hidden'));
+
+      // ボタン色リセット
+      buttons.forEach(b => {
+        b.classList.remove("bg-orange-500","bg-sky-500","bg-emerald-500","text-white");
+      });
+
+      // 押されたボタンに色を付ける
+      const activeBtn = Array.from(buttons).find(b => b.dataset.target === id);
+      if (activeBtn) {
+        activeBtn.classList.add(...colors[id].split(" "));
+      }
+
+      // パネル表示
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    };
+
+    // クリックイベント
+    buttons.forEach(b => {
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        show(b.dataset.target);
+      });
+    });
+
+    // 初期表示
+    const active = Array.from(buttons).find(b => b.dataset.active === 'true');
+    show(active ? active.dataset.target : buttons[0].dataset.target);
+  });
+})();
+</script>
 
 </body>
 </html>
