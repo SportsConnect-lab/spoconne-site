@@ -4,58 +4,163 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>プログラム | OTOBA</title>
+
+  <!-- Tailwind & Fonts (indexと同じでOK) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:"#0ea5e9",dark:"#0284c7"}},fontFamily:{sans:["Inter","Noto Sans JP","system-ui","-apple-system","Segoe UI","Roboto","Helvetica","Arial","sans-serif"]}}}};</script>
+
+  <style>
+    html { scroll-behavior:smooth; }
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,23,.55),rgba(2,6,23,.35));}
+  </style>
 </head>
 <body class="antialiased font-sans text-slate-800">
-  <!-- Header -->
-  <header class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur border-b border-slate-200 z-50">
+  <!-- 共有ヘッダー（indexのを流用） -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-extrabold text-lg sm:text-xl text-brand">OTOBA</a>
+      <a href="index.html" class="font-extrabold tracking-tight text-lg sm:text-xl text-brand">OTOBA</a>
       <nav class="hidden md:flex gap-6 text-sm font-medium">
         <a href="index.html" class="hover:text-brand">コンセプト</a>
-        <a href="programs.html" class="hover:text-brand text-brand font-bold">プログラム</a>
+        <a href="programs.html" class="font-bold text-brand">プログラム</a>
         <a href="cases.html" class="hover:text-brand">事例</a>
         <a href="price.html" class="hover:text-brand">料金</a>
         <a href="contact.html" class="hover:text-brand">問い合わせ</a>
       </nav>
+      <a href="contact.html" class="hidden sm:inline-block px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition shadow">お問い合わせ</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative pt-24 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h1 class="text-4xl sm:text-5xl font-bold">プログラム</h1>
-      <p class="mt-4 text-lg text-slate-200">OTOBA が提供する具体的な取り組み</p>
-    </div>
-  </section>
-
-  <!-- Programs -->
-  <section class="py-16 sm:py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-bold">支援内容</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <h3 class="font-semibold">年間コーチング</h3>
-          <p class="mt-2 text-sm text-slate-600">練習設計・試合分析・フィードバックを継続的に実施。</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <h3 class="font-semibold">設備・備品支援</h3>
-          <p class="mt-2 text-sm text-slate-600">企業協定内での備品導入・グラウンド改善。</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <h3 class="font-semibold">キャリア教育</h3>
-          <p class="mt-2 text-sm text-slate-600">講話・見学・体験プログラムを連携。</p>
+  <main class="pt-16">
+    <!-- Hero -->
+    <section class="relative hero">
+      <img src="https://images.unsplash.com/photo-1518148750009-815f9b4f7d49?q=80&w=1920&auto=format&fit=crop"
+           alt="" class="absolute inset-0 w-full h-full object-cover"/>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
+        <h1 class="text-4xl sm:text-5xl font-extrabold">プログラム</h1>
+        <p class="mt-3 text-white/90">対象別に最適化された導入パッケージをご用意しています。</p>
+        <div class="mt-6 flex gap-3 flex-wrap">
+          <a href="#team" class="px-4 py-2 rounded-xl bg-orange-500 text-white hover:bg-orange-600">チーム向け</a>
+          <a href="#coach" class="px-4 py-2 rounded-xl bg-sky-500 text-white hover:bg-sky-600">コーチ向け</a>
+          <a href="#company" class="px-4 py-2 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600">企業向け</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-6 bg-slate-100 text-center text-sm text-slate-600">
-    © 2025 OTOBA. All rights reserved.
+    <!-- チーム向け -->
+    <section id="team" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="inline-flex w-10 h-10 items-center justify-center rounded-lg bg-orange-500 text-white font-bold">T</span>
+          <h2 class="text-2xl sm:text-3xl font-bold">チーム向けプログラム</h2>
+        </div>
+        <p class="text-slate-600">年間強化計画、プロコーチ派遣、備品整備、レポート運用まで一気通貫で伴走します。</p>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">ベーシック</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>月2回セッション</li><li>メニュー提供</li><li>月次レポート</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">スタンダード</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>週1セッション</li><li>学校連携</li><li>協定設計サポート</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">アドバンス</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>年次計画/合宿</li><li>備品・設備支援</li><li>KPI可視化</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="contact.html" class="mt-8 inline-flex px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50">相談する</a>
+      </div>
+    </section>
+
+    <!-- コーチ向け -->
+    <section id="coach" class="py-16 sm:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="inline-flex w-10 h-10 items-center justify-center rounded-lg bg-sky-500 text-white font-bold">C</span>
+          <h2 class="text-2xl sm:text-3xl font-bold">コーチ向けプログラム</h2>
+        </div>
+        <p class="text-slate-600">プロフィール作成、マッチング、契約設計、活動の可視化と発信まで。</p>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">登録サポート</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>実績棚卸し</li><li>プロフィール作成</li><li>写真・動画整備</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">マッチング</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>候補紹介</li><li>面談同席</li><li>指導計画作成</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">契約・可視化</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>協定テンプレ</li><li>月次レポート</li><li>SNS発信支援</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="contact.html" class="mt-8 inline-flex px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50">登録する</a>
+      </div>
+    </section>
+
+    <!-- 企業向け -->
+    <section id="company" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="inline-flex w-10 h-10 items-center justify-center rounded-lg bg-emerald-500 text-white font-bold">B</span>
+          <h2 class="text-2xl sm:text-3xl font-bold">企業向けプログラム</h2>
+        </div>
+        <p class="text-slate-600">CSR/CSV・ブランドKPIと整合し、ダッシュボードで効果を可視化します。</p>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">KPI設計</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>目的整理</li><li>KPI/指標設計</li><li>ロードマップ</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">運用・協定</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>三者協定締結</li><li>運用設計</li><li>広報連携</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200 shadow-card">
+            <h3 class="font-semibold">可視化・改善</h3>
+            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>ダッシュボード</li><li>月次レポート</li><li>振り返り</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="contact.html" class="mt-8 inline-flex px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50">資料請求</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 bg-white border-t border-slate-200 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <p class="text-sm text-slate-500">© <span id="y"></span> OTOBA</p>
+      <a class="text-sm text-slate-600 hover:text-slate-900" href="contact.html">お問い合わせ</a>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
