@@ -75,136 +75,86 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" id="prog-panels">
 
         <!-- ===== チーム向け ===== -->
-        <div id="tab-teams" class="tab-panel grid md:grid-cols-2 gap-8">
-          <!-- card -->
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-orange-600">
-              <!-- icon -->
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v2H4V4zm0 6h10v2H4v-2zm0 6h16v2H4v-2z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">世界基準のコーチング</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              プロ／リーグワン所属コーチや選手から直接スキルを学べます。現役アナリストによる戦術分析・スカウティングにも対応。
-              チーム状況をヒアリングし、最適な指導者をマッチングします。
-            </p>
-          </div>
+        <div id="tab-teams" class="tab-panel rounded-2xl p-6">
+  <h3 class="text-2xl font-bold text-orange-600 mb-8 text-center">チーム向けメリット</h3>
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- カード1 -->
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-orange-500 mb-2">無料でプロコーチ</h4>
+      <p class="text-slate-600 text-sm">完全に無料でプロコーチのコーチングが受けられます。</p>
+    </div>
+    <!-- カード2 -->
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-orange-500 mb-2">リーグワン所属のコーチ</h4>
+      <p class="text-slate-600 text-sm">リーグワン所属のコーチや選手から直接スキルを学べます。</p>
+    </div>
+    <!-- カード3 -->
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-orange-500 mb-2">戦術分析やスカウティング</h4>
+      <p class="text-slate-600 text-sm">現役アナリストによるチーム戦術分析やスカウティングも可能です。</p>
+    </div>
+    <!-- カード4 -->
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-orange-500 mb-2">パートナー企業との接点</h4>
+      <p class="text-slate-600 text-sm">企業との接点機会を得られ、成長のチャンスが広がります。</p>
+    </div>
+  </div>
 
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-orange-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7V3l8 8-8 8v-4H4V7h8z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">カスタマイズされたプログラム</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              プレシーズン/インシーズンなど時期に応じた設計。技術・戦術・フィジカル・メンタルまで、チームに合わせてオーダーメイドで提供します。
-            </p>
-          </div>
+  <!-- 有料プラン -->
+  <div class="mt-8 p-6 rounded-xl bg-orange-50 border border-orange-200 text-orange-700">
+    <h4 class="font-bold mb-2">有料プラン</h4>
+    <p class="text-sm">月2回以上の派遣が可能で、定期的なコーチングを受けられます。</p>
+  </div>
+</div>
 
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-orange-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">費用負担ゼロで継続指導</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              無料でプロのコーチングを受けられます。有料プランでは月2回以上の派遣も可能。定期的なセッションで着実に成長を後押しします。
-            </p>
-          </div>
-
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-orange-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11V5H8v6H3l9 9 9-9h-5z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">企業連携のチャンス</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              パートナー企業との接点を提供。用具提供やイベント、キャリア教育など、競技の外側でもチームにプラスの機会が広がります。
-            </p>
-          </div>
-        </div>
 
         <!-- ===== コーチ向け ===== -->
-        <div id="tab-coaches" class="tab-panel hidden grid md:grid-cols-2 gap-8">
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-sky-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm4 0h14v-2H7v2zM3 17h2v-2H3v2zm4 0h14v-2H7v2zM3 9h2V7H3v2zm4 0h14V7H7v2z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">安定した収入と環境</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              コーチング費は弊社負担。活動環境も整備します。現場に集中できる条件で、あなたの指導力を最大化できます。
-            </p>
-          </div>
+        <div id="tab-coaches" class="tab-panel rounded-2xl p-6 hidden">
+  <h3 class="text-2xl font-bold text-sky-600 mb-8 text-center">コーチ向けメリット</h3>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-sky-500 mb-2">安定した収入</h4>
+      <p class="text-slate-600 text-sm">1回ごとのコーチング費用は弊社が負担します。</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-sky-500 mb-2">環境もサポート</h4>
+      <p class="text-slate-600 text-sm">コーチング環境も弊社が用意します。</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-sky-500 mb-2">スキルを活かす場</h4>
+      <p class="text-slate-600 text-sm">これまでの知見を活かし、チームに貢献できます。</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-sky-500 mb-2">多様な働き方</h4>
+      <p class="text-slate-600 text-sm">第二キャリア、土日のみなど多様な形で活動可能です。</p>
+    </div>
+  </div>
+</div>
 
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-sky-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l4 4-4 4-4-4 4-4zm0 7l4 4-4 4-4-4 4-4zm0 7l4 4-4 4-4-4 4-4z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">スキルを最大限に活かす</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              技術・戦術・育成・分析など、得意分野を軸に複数チームへの関与も可能。土日のみや限定稼働など柔軟な働き方に対応します。
-            </p>
-          </div>
-
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-sky-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5zm0 2c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">第二キャリアの土台に</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              アスリートの次のキャリアとしてのコーチングを支援。研修・情報共有コミュニティで継続的なスキルアップ機会も用意しています。
-            </p>
-          </div>
-
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-sky-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v10H4zM2 16h20v2H2z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">オンライン併用もOK</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              映像フィードバックやリモートミーティングを取り入れ、移動時間を最小化しながら高品質の指導を実現できます。
-            </p>
-          </div>
-        </div>
 
         <!-- ===== 企業向け ===== -->
-        <div id="tab-companies" class="tab-panel hidden grid md:grid-cols-2 gap-8">
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-emerald-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">パートナー出資と共創</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              教育・スポーツ・地域を結ぶ社会性の高い取り組み。ブランド価値とCSVを同時に高める共創パートナーを募集しています。
-            </p>
-          </div>
+        <div id="tab-companies" class="tab-panel rounded-2xl p-6 hidden">
+  <h3 class="text-2xl font-bold text-emerald-600 mb-8 text-center">企業向けメリット</h3>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-emerald-500 mb-2">学生との接点</h4>
+      <p class="text-slate-600 text-sm">国公立大学の学生と直接接点を持てるのは OTOBA だけです。</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-emerald-500 mb-2">採用コスト削減</h4>
+      <p class="text-slate-600 text-sm">優秀な人材と早期に出会え、採用コストを大幅削減します。</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-emerald-500 mb-2">CSR/CSV 貢献</h4>
+      <p class="text-slate-600 text-sm">教育・スポーツ支援として企業のCSR活動を強化できます。</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+      <h4 class="font-bold text-lg text-emerald-500 mb-2">第二キャリア支援</h4>
+      <p class="text-slate-600 text-sm">アスリートの第二キャリアを応援する社会性の高い事業です。</p>
+    </div>
+  </div>
+</div>
 
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-emerald-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-3.31 0-7 1.34-7 4v2h14v-2c0-2.66-3.69-4-7-4z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">優秀学生との直接接点</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              国公立大チームを中心に、意欲ある学生とダイレクトに出会えます。説明会・商品体験・共創ワークショップなどの企画も可能です。
-            </p>
-          </div>
-
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-emerald-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14v2H5zm0 6h14v2H5zm0 6h14v2H5z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">採用・広報の効果を最大化</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              採用コストの削減と、長期的なブランド資産形成に寄与。成果はKPIで可視化し、レポートで定期共有します。
-            </p>
-          </div>
-
-          <div class="rounded-2xl bg-white shadow-card p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-4 text-emerald-600">
-              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M21 7l-9 6-9-6V5l9 6 9-6v2z"/></svg>
-              <h3 class="text-2xl font-extrabold leading-tight">CSR/CSV と社会的インパクト</h3>
-            </div>
-            <p class="text-slate-700 leading-relaxed">
-              コーチや環境に恵まれない学生の支援、アスリートの第二キャリア支援を推進。企業の社会価値向上に直結します。
-            </p>
-          </div>
-        </div>
 
       </div>
     </section>
