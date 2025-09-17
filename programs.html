@@ -1,204 +1,222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>プログラム | OTOBA</title>
-
-  <!-- Tailwind -->
+  <!-- 簡易: Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: "#0ea5e9", dark: "#0284c7" },
-          },
-          fontFamily: {
-            sans: ["Inter","Noto Sans JP","system-ui","-apple-system","Segoe UI","Roboto","Helvetica","Arial","sans-serif"]
-          },
-          boxShadow: {
-            card: "0 12px 30px -12px rgba(2,6,23,.25)"
-          }
-        }
-      }
-    }
-  </script>
 </head>
-<body class="antialiased font-sans text-slate-800 bg-slate-50">
-
-  <!-- ===== Header ===== -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-extrabold tracking-tight text-lg sm:text-xl text-brand">OTOBA</a>
-      <nav class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-brand">コンセプト</a>
-        <a href="programs.html" class="font-bold text-brand">プログラム</a>
-        <a href="cases.html" class="hover:text-brand">事例</a>
-        <a href="price.html" class="hover:text-brand">料金</a>
-        <a href="contact.html" class="hover:text-brand">問い合わせ</a>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-100">
+    <div class="mx-auto max-w-7xl px-4 md:px-8 h-16 flex items-center justify-between">
+      <a href="./index.html" class="text-2xl font-extrabold tracking-tight text-blue-600">OTOBA</a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="./concept.html" class="hover:text-blue-600">コンセプト</a>
+        <a href="./programs.html" class="text-blue-600">プログラム</a>
+        <a href="./cases.html" class="hover:text-blue-600">事例</a>
+        <a href="./pricing.html" class="hover:text-blue-600">料金</a>
+        <a href="./contact.html" class="hover:text-blue-600">問い合わせ</a>
       </nav>
     </div>
   </header>
 
-  <main class="pt-20">
-    <!-- ===== Hero-ish BG with overlay ===== -->
-    <section class="relative">
-      <img
-        src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000&auto=format&fit=crop"
-        alt="" class="absolute inset-0 w-full h-[420px] object-cover" />
-      <div class="absolute inset-0 bg-slate-900/30 backdrop-blur-[1px]"></div>
+  <!-- Hero -->
+  <section class="relative">
+    <img src="./images/hero.jpg" alt="" class="w-full h-[42vh] md:h-[52vh] object-cover" />
+    <!-- overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
 
-      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-white text-center tracking-wide">プログラム</h1>
-        <p class="mt-3 text-white/90 text-center">対象を選ぶと、最適な内容が表示されます</p>
+    <div class="absolute inset-0 flex items-center">
+      <div class="mx-auto max-w-7xl px-4 md:px-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">プログラム</h1>
+        <p class="mt-3 md:mt-4 text-white/90 text-base md:text-lg">対象を選ぶと、最適な内容が表示されます。</p>
 
         <!-- Tabs -->
-        <div class="mt-8 flex justify-center" id="prog-tabs">
-          <div class="inline-flex rounded-2xl border border-white/40 bg-white/90 shadow p-1 backdrop-blur">
-            <button type="button"
-              class="tab-btn px-6 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-orange-50 transition"
-              data-target="tab-teams" data-active="true" aria-selected="true">チーム向け</button>
-            <button type="button"
-              class="tab-btn px-6 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 transition"
-              data-target="tab-coaches" aria-selected="false">コーチ向け</button>
-            <button type="button"
-              class="tab-btn px-6 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-emerald-50 transition"
-              data-target="tab-companies" aria-selected="false">企業向け</button>
-          </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button id="tab-team"
+            class="rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold bg-white text-gray-700 hover:bg-blue-50"
+            type="button">チーム向け</button>
+          <button id="tab-coach"
+            class="rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold bg-blue-600 text-white shadow-md"
+            type="button">コーチ向け</button>
+          <button id="tab-company"
+            class="rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold bg-white text-gray-700 hover:bg-blue-50"
+            type="button">企業向け</button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="mx-auto max-w-7xl px-4 md:px-8 py-12 md:py-16">
+    <!-- コーチ向け -->
+    <section id="panel-coach" class="block">
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-blue-700">コーチ向けメリット</h2>
+      <p class="mt-2 text-gray-600 text-base md:text-lg">指導に集中できる環境と、継続的な活躍機会を提供します。</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">安定した収入</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            1回ごとのコーチング費用は弊社が負担。定期的な依頼があり、月次での収入見通しを立てやすい仕組みです。
+            副業・複業としても無理なく続けられるスケジュール設計をサポートします。
+          </p>
+        </article>
+
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">環境もサポート</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            会場手配や必要備品の準備は弊社が担当。移動や事務手続きなどの雑務を最小化し、
+            コーチは指導設計と現場パフォーマンスに集中できます。トラブル時のバックアップ体制も用意。
+          </p>
+        </article>
+
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">スキルを活かす場</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            これまでの知見を各チームの課題に合わせて提供。学生アスリートの成長に直接寄与しつつ、
+            自身の指導メソッドを磨けます。評価フィードバックと実績可視化で次のキャリアへつながります。
+          </p>
+        </article>
+
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">多様な働き方</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            平日の夜だけ・週末集中・オンライン指導など、生活に合わせた関わり方が可能。
+            長期/短期プロジェクトの選択もでき、第二のキャリア形成にも最適です。
+          </p>
+        </article>
       </div>
     </section>
 
-    <!-- ===== Panels (cards over bg) ===== -->
-    <section class="relative -mt-16 pb-24">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" id="prog-panels">
+    <!-- チーム向け -->
+    <section id="panel-team" class="hidden">
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-blue-700">チーム向けメリット</h2>
+      <p class="mt-2 text-gray-600 text-base md:text-lg">勝つための“再現性”を、データと専門コーチでつくる。</p>
 
-        <!-- ===== チーム向け ===== -->
-        <div id="tab-teams" class="tab-panel rounded-2xl p-14">
-  <h3 class="text-2xl font-bold text-orange-600 mb-8 text-center">チーム向けメリット</h3>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">専任コーチの伴走</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            分野別の専門家がチーム課題に合わせて伴走。練習設計から試合後のレビューまで一貫支援し、
+            個別強化とチーム最適の両立を図ります。
+          </p>
+        </article>
 
-<div class="grid md:grid-cols-2 gap-6">
-  <!-- 1 -->
-  <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-    <div class="text-2xl">🏆</div>
-    <h4 class="font-bold text-xl text-orange-500 mt-2 mb-2">無料でプロコーチ</h4>
-    <p class="text-slate-600 text-sm">完全に無料でプロコーチのコーチングが受けられます。</p>
-  </div>
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">データに基づく可視化</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            スタッツ・映像・フィードバックを統合し、「できた/できない」を明確化。
+            次の練習に直結する改善点がはっきりし、成長サイクルが加速します。
+          </p>
+        </article>
 
-  <!-- 2 -->
-  <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-    <div class="text-2xl">🧑‍🏫</div>
-    <h4 class="font-bold text-lg text-orange-500 mt-2 mb-2">リーグワンの指導</h4>
-    <p class="text-slate-600 text-sm">リーグワン所属のコーチや選手から直接スキルを習得できます。</p>
-  </div>
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">環境・運営の効率化</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            会場手配、備品、スケジュール、連絡系の整備までサポート。指導者は指導、
+            選手は練習に集中できる状態を実現します。
+          </p>
+        </article>
 
-  <!-- 3 -->
-  <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-    <div class="text-2xl">🧠</div>
-    <h4 class="font-bold text-lg text-orange-500 mt-2 mb-2">戦術分析＆スカウティング</h4>
-    <p class="text-slate-600 text-sm">現役アナリストが戦術分析やスカウティングを実施可能です。</p>
-  </div>
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">地域・企業との連携</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            企業スポンサーや地域連携の機会を創出。活動資金と露出を確保しながら、
+            学校外の学びやキャリア教育にもつなげます。
+          </p>
+        </article>
+      </div>
+    </section>
 
-  <!-- 4 -->
-  <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-    <div class="text-2xl">🤝</div>
-    <h4 class="font-bold text-lg text-orange-500 mt-2 mb-2">企業との接点</h4>
-    <p class="text-slate-600 text-sm">パートナー企業との接点機会が増え、活動の幅が広がります。</p>
-  </div>
-</div>
+    <!-- 企業向け -->
+    <section id="panel-company" class="hidden">
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-blue-700">企業向けメリット</h2>
+      <p class="mt-2 text-gray-600 text-base md:text-lg">学生支援 × 企業ブランディング × 採用の好循環をつくる。</p>
 
-<!-- 有料プラン告知（任意） -->
-<div class="mt-8 p-6 rounded-xl bg-orange-50 border border-orange-200 text-orange-700">
-  <h4 class="font-bold mb-2">有料プラン</h4>
-  <p class="text-sm">月2回以上の派遣が可能。定期的なコーチングを受けながら中長期で強化できます。</p>
-</div>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">若年層への認知拡大</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            ユニフォーム・イベント・SNS露出で継続的に接点を形成。「支援する企業」としての好意度を高め、
+            学生・保護者・学校関係者まで広くリーチします。
+          </p>
+        </article>
 
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">採用広報の強化</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            主体性・協調性の高い学生アスリートとの早期接点を創出。部活動単位の説明会や現場見学、
+            OBOG座談会など、リアルな魅力訴求が可能です。
+          </p>
+        </article>
 
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">共創型の社会貢献</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            単発寄付ではなく、教育価値を伴う共創型プログラムを設計。企業ミッションと整合する
+            CSV/サステナビリティ活動として発信できます。
+          </p>
+        </article>
 
-
-        <!-- ===== コーチ向け ===== -->
-        <div id="tab-coaches" class="tab-panel rounded-2xl p-6 hidden">
-  <h3 class="text-2xl font-bold text-sky-600 mb-8 text-center">コーチ向けメリット</h3>
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-sky-500 mb-2">安定した収入</h4>
-      <p class="text-slate-600 text-sm">1回ごとのコーチング費用は弊社が負担します。</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-sky-500 mb-2">環境もサポート</h4>
-      <p class="text-slate-600 text-sm">コーチング環境も弊社が用意します。</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-sky-500 mb-2">スキルを活かす場</h4>
-      <p class="text-slate-600 text-sm">これまでの知見を活かし、チームに貢献できます。</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-sky-500 mb-2">多様な働き方</h4>
-      <p class="text-slate-600 text-sm">第二キャリア、土日のみなど多様な形で活動可能です。</p>
-    </div>
-  </div>
-</div>
-
-
-        <!-- ===== 企業向け ===== -->
-        <div id="tab-companies" class="tab-panel rounded-2xl p-6 hidden">
-  <h3 class="text-2xl font-bold text-emerald-600 mb-8 text-center">企業向けメリット</h3>
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-emerald-500 mb-2">学生との接点</h4>
-      <p class="text-slate-600 text-sm">国公立大学の学生と直接接点を持てるのは OTOBA だけです。</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-emerald-500 mb-2">採用コスト削減</h4>
-      <p class="text-slate-600 text-sm">優秀な人材と早期に出会え、採用コストを大幅削減します。</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-emerald-500 mb-2">CSR/CSV 貢献</h4>
-      <p class="text-slate-600 text-sm">教育・スポーツ支援として企業のCSR活動を強化できます。</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
-      <h4 class="font-bold text-lg text-emerald-500 mb-2">第二キャリア支援</h4>
-      <p class="text-slate-600 text-sm">アスリートの第二キャリアを応援する社会性の高い事業です。</p>
-    </div>
-  </div>
-</div>
-
-
+        <article class="rounded-2xl shadow-xl bg-white p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-blue-700">検証可能な成果指標</h3>
+          <p class="mt-3 text-lg leading-relaxed">
+            リーチ数、参加者満足、採用母集団質、SNSエンゲージメントなどを定点計測。
+            社内説明に使えるレポートを提供します。
+          </p>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- ===== Tab Script ===== -->
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 md:px-8 py-8 text-sm text-gray-500">
+      © OTOBA
+    </div>
+  </footer>
+
+  <!-- Tabs Script（CDN向けにクラス文字列で制御） -->
   <script>
-  (() => {
-    const buttons = document.querySelectorAll('#prog-tabs .tab-btn');
-    const panels = document.querySelectorAll('#prog-panels .tab-panel');
-    const colors = {
-      "tab-teams": "bg-orange-500 text-white",
-      "tab-coaches": "bg-sky-500 text-white",
-      "tab-companies": "bg-emerald-500 text-white"
+    const tabs = {
+      team: document.getElementById('tab-team'),
+      coach: document.getElementById('tab-coach'),
+      company: document.getElementById('tab-company'),
+    };
+    const panels = {
+      team: document.getElementById('panel-team'),
+      coach: document.getElementById('panel-coach'),
+      company: document.getElementById('panel-company'),
     };
 
-    function show(id){
-      panels.forEach(p => p.classList.add('hidden'));
-      document.getElementById(id)?.classList.remove('hidden');
+    const activeBtn = 'bg-blue-600 text-white shadow-md';
+    const inactiveBtn = 'bg-white text-gray-700 hover:bg-blue-50';
 
-      buttons.forEach(b => {
-        b.classList.remove('bg-orange-500','bg-sky-500','bg-emerald-500','text-white');
-        b.setAttribute('aria-selected','false');
+    function setActive(key){
+      // buttons
+      Object.entries(tabs).forEach(([k, el])=>{
+        el.classList.remove('bg-blue-600','text-white','shadow-md','bg-white','text-gray-700','hover:bg-blue-50');
+        el.classList.add(...(k === key ? activeBtn.split(' ') : inactiveBtn.split(' ')));
       });
-      const active = [...buttons].find(b => b.dataset.target === id);
-      if (active) {
-        active.classList.add(...colors[id].split(' '));
-        active.setAttribute('aria-selected','true');
-      }
+      // panels
+      Object.entries(panels).forEach(([k, el])=>{
+        if(k === key){ el.classList.remove('hidden'); el.classList.add('block'); }
+        else { el.classList.remove('block'); el.classList.add('hidden'); }
+      });
+      // スクロール位置を調整
+      const main = document.querySelector('main');
+      if(main) window.scrollTo({ top: main.offsetTop - 16, behavior: 'smooth' });
     }
 
-    buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.target)));
-    const first = [...buttons].find(b => b.dataset.active === 'true') || buttons[0];
-    show(first.dataset.target);
-  })();
+    tabs.team.addEventListener('click', ()=>setActive('team'));
+    tabs.coach.addEventListener('click', ()=>setActive('coach'));
+    tabs.company.addEventListener('click', ()=>setActive('company'));
+
+    // 初期表示：コーチ向け
+    setActive('coach');
   </script>
 </body>
 </html>
