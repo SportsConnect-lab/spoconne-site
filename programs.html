@@ -50,82 +50,56 @@
     class="tab-btn rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
     data-target="tab-companies">企業向け</button>
 </div>
+<!-- ====== パネル群 ====== -->
+<div id="prog-panels" class="mt-10">
 
+  <!-- チーム向け -->
+  <div id="tab-teams" class="tab-panel">
+    <h3 class="text-2xl font-bold text-orange-600 mb-6">チーム向けメリット</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+        <h4 class="font-bold text-lg text-orange-500 mb-2">専任コーチの伴走</h4>
+        <p class="text-slate-600 text-sm">課題に合わせて伴走。設計～レビューまで一貫支援。</p>
       </div>
-    </div>
-
-    <!-- パネル -->
-    <div class="mt-10 grid gap-6" id="prog-panels">
-      <!-- チーム -->
-      <div id="tab-team" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 class="text-2xl font-bold text-orange-500 mb-6">チーム向けメリット</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="card card-team p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">専任コーチの伴走</h3>
-            <p class="text-slate-600">課題に合わせて伴走。設計〜レビューまで一貫支援。</p>
-          </div>
-          <div class="card card-team p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">データに基づく可視化</h3>
-            <p class="text-slate-600">次の練習に直結する改善点が明確に。</p>
-          </div>
-          <div class="card card-team p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">戦術分析/スカウティング</h3>
-            <p class="text-slate-600">現役アナリストによる分析も可能。</p>
-          </div>
-          <div class="card card-team p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">企業との接点機会</h3>
-            <p class="text-slate-600">パートナー企業との交流で学びが拡張。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- コーチ -->
-      <div id="tab-coach" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6 hidden">
-        <h2 class="text-2xl font-bold text-sky-500 mb-6">コーチ向けメリット</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="card card-coach p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">安定した収入</h3>
-            <p class="text-slate-600">1回ごとの費用は弊社負担。継続案件で見通し◎。</p>
-          </div>
-          <div class="card card-coach p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">環境サポート</h3>
-            <p class="text-slate-600">会場・備品・手続きは弊社が担い指導に集中。</p>
-          </div>
-          <div class="card card-coach p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">スキル/知見の最大活用</h3>
-            <p class="text-slate-600">得意領域に合う案件をマッチング。</p>
-          </div>
-          <div class="card card-coach p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">柔軟な働き方</h3>
-            <p class="text-slate-600">土日だけなどライフスタイルに合わせてOK。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 企業 -->
-      <div id="tab-company" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6 hidden">
-        <h2 class="text-2xl font-bold text-emerald-500 mb-6">企業向けメリット</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="card card-company p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">若年層への認知拡大</h3>
-            <p class="text-slate-600">継続的な接点設計で好意度とリーチを向上。</p>
-          </div>
-          <div class="card card-company p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">採用広報の強化</h3>
-            <p class="text-slate-600">高い協調性の学生アスリートと早期接点。</p>
-          </div>
-          <div class="card card-company p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">CSR・CSVの向上</h3>
-            <p class="text-slate-600">教育/地域への貢献をブランド資産に。</p>
-          </div>
-          <div class="card card-company p-6 rounded-2xl shadow-md">
-            <h3 class="font-semibold text-lg mb-2">運用伴走</h3>
-            <p class="text-slate-600">設計〜レポートまで弊社が伴走し負担を最小化。</p>
-          </div>
-        </div>
+      <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+        <h4 class="font-bold text-lg text-orange-500 mb-2">データに基づく可視化</h4>
+        <p class="text-slate-600 text-sm">改善点が明確になり成長サイクルが加速。</p>
       </div>
     </div>
   </div>
+
+  <!-- コーチ向け -->
+  <div id="tab-coaches" class="tab-panel hidden">
+    <h3 class="text-2xl font-bold text-sky-600 mb-6">コーチ向けメリット</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+        <h4 class="font-bold text-lg text-sky-500 mb-2">安定した収入</h4>
+        <p class="text-slate-600 text-sm">弊社がコーチング費を負担し、継続的な依頼が可能。</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+        <h4 class="font-bold text-lg text-sky-500 mb-2">環境もサポート</h4>
+        <p class="text-slate-600 text-sm">会場手配や事務負担を最小化し、指導に集中可能。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 企業向け -->
+  <div id="tab-companies" class="tab-panel hidden">
+    <h3 class="text-2xl font-bold text-emerald-600 mb-6">企業向けメリット</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+        <h4 class="font-bold text-lg text-emerald-500 mb-2">若年層への認知拡大</h4>
+        <p class="text-slate-600 text-sm">学生や保護者との接点を通じて好意度を向上。</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
+        <h4 class="font-bold text-lg text-emerald-500 mb-2">採用広報の強化</h4>
+        <p class="text-slate-600 text-sm">部活動単位での接点を活用し、魅力を訴求。</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 </section>
 
   </main>
