@@ -37,17 +37,20 @@
     <!-- タブ -->
     <div class="mt-8 flex justify-center" id="prog-tabs">
       <div class="inline-flex rounded-2xl border border-slate-200 bg-white/90 shadow p-1">
-        <button type="button"
-          class="tab-btn px-5 py-2 rounded-xl text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50"
-          data-target="tab-team" aria-controls="tab-team" data-active="true">チーム向け</button>
+        <div class="mt-6 flex flex-wrap gap-3">
+  <button type="button"
+    class="tab-btn rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+    data-target="tab-teams" data-active="true">チーム向け</button>
 
-        <button type="button"
-          class="tab-btn px-5 py-2 rounded-xl text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50"
-          data-target="tab-coach" aria-controls="tab-coach">コーチ向け</button>
+  <button type="button"
+    class="tab-btn rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+    data-target="tab-coaches">コーチ向け</button>
 
-        <button type="button"
-          class="tab-btn px-5 py-2 rounded-xl text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50"
-          data-target="tab-company" aria-controls="tab-company">企業向け</button>
+  <button type="button"
+    class="tab-btn rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+    data-target="tab-companies">企業向け</button>
+</div>
+
       </div>
     </div>
 
