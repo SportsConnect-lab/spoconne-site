@@ -30,11 +30,13 @@
 
     <!-- ===== タブ（上部） ===== -->
     <div class="mt-6 flex justify-center" id="prog-tabs">
-      <div class="tabs">
-        <button type="button" class="tab-btn is-active" data-target="tab-teams" aria-selected="true">チーム向け</button>
-        <button type="button" class="tab-btn" data-target="tab-coaches" aria-selected="false">コーチ向け</button>
-        <button type="button" class="tab-btn" data-target="tab-companies" aria-selected="false">企業向け</button>
-      </div>
+      <!-- ==== Tabs ==== -->
+　　　　<div class="tabs" id="prog-tabs">
+  　　　<button class="tab-btn is-active" data-target="tab-teams">チーム向け</button>
+  　　　<button class="tab-btn" data-target="tab-coaches">コーチ向け</button>
+  　　　<button class="tab-btn" data-target="tab-companies">企業向け</button>
+　　　　</div>
+
     </div>
   </div>
 </section>
@@ -43,7 +45,7 @@
 <div id="prog-panels" class="mt-10">
 
   <!-- チーム向け -->
-  <div id="tab-teams" class="tab-panel">
+  <div id="tab-teams" class="tab-panel is-show">
     <h3 class="text-2xl font-bold text-orange-600 mb-6">チーム向けメリット</h3>
     <div class="grid md:grid-cols-2 gap-6">
       <div class="p-6 rounded-xl bg-white shadow-md border border-slate-200">
