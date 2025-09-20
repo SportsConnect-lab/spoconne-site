@@ -2,60 +2,55 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ================= タブボタン ================= */
-.tab-btn[data-target="tab-teams"][data-active="true"],
-.tab-btn[data-target="tab-teams"][aria-selected="true"] {
-  background-color: #f97316; /* オレンジ */
-  color: #fff;
+/* ===== Programs Tabs (完全版) ===== */
+
+/* 共通のON状態（丸いピルのベース） */
+.tab-btn[aria-selected="true"],
+.tab-btn[data-active="true"] {
+  background: #e2e8f0; /* 薄いグレー（色指定が上で上書きされます） */
+  color: #111827;
+  box-shadow: 0 1px 0 rgba(2,6,23,.05), 0 1px 1px rgba(2,6,23,.06);
 }
 
-.tab-btn[data-target="tab-coaches"][data-active="true"],
-.tab-btn[data-target="tab-coaches"][aria-selected="true"] {
-  background-color: #0ea5e9; /* 水色 */
-  color: #fff;
+/* ===== アクティブ色：ホームと同じ配色 ===== */
+
+/* チーム：オレンジ */
+.tab-btn[data-target="tab-team"][aria-selected="true"],
+.tab-btn[data-target="tab-team"][data-active="true"],
+/* 互換（もし plural を使っていた場合の保険） */
+.tab-btn[data-target="tab-teams"][aria-selected="true"],
+.tab-btn[data-target="tab-teams"][data-active="true"] {
+  background-color: #f97316 !important;
+  color: #fff !important;
 }
 
-.tab-btn[data-target="tab-companies"][data-active="true"],
-.tab-btn[data-target="tab-companies"][aria-selected="true"] {
-  background-color: #10b981; /* 緑 */
-  color: #fff;
+/* コーチ：水色 */
+.tab-btn[data-target="tab-coach"][aria-selected="true"],
+.tab-btn[data-target="tab-coach"][data-active="true"],
+.tab-btn[data-target="tab-coaches"][aria-selected="true"],
+.tab-btn[data-target="tab-coaches"][data-active="true"] {
+  background-color: #0ea5e9 !important;
+  color: #fff !important;
 }
 
-/* ================= カード（プログラム詳細） ================= */
-.card-team {
-  background-color: rgba(249, 115, 22, 0.1); /* オレンジ淡 */
-  transition: background 0.3s ease;
-}
-.card-team:hover {
-  background-color: rgba(249, 115, 22, 0.3); /* オレンジ濃 */
-}
-
-.card-coach {
-  background-color: rgba(14, 165, 233, 0.1); /* 水色淡 */
-  transition: background 0.3s ease;
-}
-.card-coach:hover {
-  background-color: rgba(14, 165, 233, 0.3); /* 水色濃 */
+/* 企業：緑 */
+.tab-btn[data-target="tab-company"][aria-selected="true"],
+.tab-btn[data-target="tab-company"][data-active="true"],
+.tab-btn[data-target="tab-companies"][aria-selected="true"],
+.tab-btn[data-target="tab-companies"][data-active="true"] {
+  background-color: #10b981 !important;
+  color: #fff !important;
 }
 
-.card-company {
-  background-color: rgba(16, 185, 129, 0.1); /* 緑淡 */
-  transition: background 0.3s ease;
-}
-.card-company:hover {
-  background-color: rgba(16, 185, 129, 0.3); /* 緑濃 */
-}
+/* パネルの初期非表示制御（Tailwind を使っていない箇所の保険） */
+.tab-panel.hidden { display: none; }
 
-/* ================= STEPバッジ ================= */
-.step {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: .25rem .5rem;
-  border-radius: .5rem;
-  background: #e2e8f0;
-  color: #334155;
-  font-weight: 700;
-  font-size: .75rem;
-  min-width: 3.5rem;
-}
+/* カードの淡い色（ホバーで少し濃くする） */
+.card-team    { background-color: rgba(255,165,0,.10);    transition: background .3s ease; }
+.card-team:hover    { background-color: rgba(255,165,0,.30); }
+
+.card-coach   { background-color: rgba(14,165,233,.10);  transition: background .3s ease; }
+.card-coach:hover   { background-color: rgba(14,165,233,.30); }
+
+.card-company { background-color: rgba(16,185,129,.10);  transition: background .3s ease; }
+.card-company:hover { background-color: rgba(16,185,129,.30); }
