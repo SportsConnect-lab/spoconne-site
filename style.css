@@ -1,103 +1,86 @@
+/* ===== 全体共通 ===== */
 html {
   scroll-behavior: smooth;
 }
 
-/* ===== Programs Tabs (完全版) ===== */
-
-/* 共通のON状態（丸いピルのベース） */
-.tab-btn[aria-selected="true"],
-.tab-btn[data-active="true"] {
-  background: #e2e8f0; /* 薄いグレー（色指定が上で上書きされます） */
-  color: #111827;
-  box-shadow: 0 1px 0 rgba(2,6,23,.05), 0 1px 1px rgba(2,6,23,.06);
-}
-
-/* ===== アクティブ色：ホームと同じ配色 ===== */
-
-/* チーム：オレンジ */
-.tab-btn[data-target="tab-team"][aria-selected="true"],
-.tab-btn[data-target="tab-team"][data-active="true"],
-/* 互換（もし plural を使っていた場合の保険） */
-.tab-btn[data-target="tab-teams"][aria-selected="true"],
-.tab-btn[data-target="tab-teams"][data-active="true"] {
-  background-color: #f97316 !important;
-  color: #fff !important;
-}
-
-/* コーチ：水色 */
-.tab-btn[data-target="tab-coach"][aria-selected="true"],
-.tab-btn[data-target="tab-coach"][data-active="true"],
-.tab-btn[data-target="tab-coaches"][aria-selected="true"],
-.tab-btn[data-target="tab-coaches"][data-active="true"] {
-  background-color: #0ea5e9 !important;
-  color: #fff !important;
-}
-
-/* 企業：緑 */
-.tab-btn[data-target="tab-company"][aria-selected="true"],
-.tab-btn[data-target="tab-company"][data-active="true"],
-.tab-btn[data-target="tab-companies"][aria-selected="true"],
-.tab-btn[data-target="tab-companies"][data-active="true"] {
-  background-color: #10b981 !important;
-  color: #fff !important;
-}
-
-/* パネルの初期非表示制御（Tailwind を使っていない箇所の保険） */
-.tab-panel.hidden { display: none; }
-
-/* カードの淡い色（ホバーで少し濃くする） */
-.card-team    { background-color: rgba(255,165,0,.10);    transition: background .3s ease; }
-.card-team:hover    { background-color: rgba(255,165,0,.30); }
-
-.card-coach   { background-color: rgba(14,165,233,.10);  transition: background .3s ease; }
-.card-coach:hover   { background-color: rgba(14,165,233,.30); }
-
-.card-company { background-color: rgba(16,185,129,.10);  transition: background .3s ease; }
-.card-company:hover { background-color: rgba(16,185,129,.30); }
-
-/* ============ Programs タブの見た目 ============ */
+/* ===== タブコンテナ ===== */
 .tabs {
   display: flex;
-  gap: .75rem;
+  gap: 1rem;
   justify-content: center;
-  align-items: center;
+  margin-top: 1.5rem;
 }
 
+/* ===== タブボタンのベース ===== */
 .tab-btn {
-  -webkit-appearance: none;
   appearance: none;
-  border-radius: 9999px;
-  padding: .5rem 1.25rem;
-  border: 1px solid #e5e7eb;          /* slate-200 相当 */
-  background: #fff;
-  color: #334155;                      /* slate-700 相当 */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;         /* 丸み */
   font-weight: 600;
-  line-height: 1;
-  box-shadow: 0 1px 0 rgba(0,0,0,.04);
-  transition: box-shadow .2s ease, transform .05s ease;
-}
-.tab-btn:hover,
-.tab-btn:focus-visible {
-  box-shadow: 0 0 0 3px rgba(59,130,246,.12); /* 薄いフォーカス輪郭 */
+  font-size: 0.95rem;
+  color: #334155;               /* slate-700 */
+  background: #f8fafc;          /* slate-50 */
+  border: 1px solid #e2e8f0;    /* slate-200 */
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* アクティブ色（ホームと同じ配色） */
-.tab-btn.is-active[data-target="tab-teams"]{
-  background: #f97316;   /* オレンジ */
+.tab-btn:hover {
+  background: #f1f5f9;          /* slate-100 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== アクティブ状態（対象ごとに色分け） ===== */
+.tab-btn.is-active[data-target="tab-teams"] {
+  background: #f97316;   /* orange-500 */
   border-color: #f97316;
   color: #fff;
 }
-.tab-btn.is-active[data-target="tab-coaches"]{
-  background: #0ea5e9;   /* 水色 */
+
+.tab-btn.is-active[data-target="tab-coaches"] {
+  background: #0ea5e9;   /* sky-500 */
   border-color: #0ea5e9;
   color: #fff;
 }
-.tab-btn.is-active[data-target="tab-companies"]{
-  background: #10b981;   /* 緑 */
+
+.tab-btn.is-active[data-target="tab-companies"] {
+  background: #10b981;   /* emerald-500 */
   border-color: #10b981;
   color: #fff;
 }
 
-/* パネルの表示/非表示（display 切り替え） */
-.tab-panel { display: none; }
-.tab-panel.is-show { display: block; }
+/* ===== パネルの表示/非表示 ===== */
+.tab-panel {
+  display: none;
+  margin-top: 2rem;
+}
+
+.tab-panel.is-show {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ===== パネル内カードデザイン ===== */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== アニメーション ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
