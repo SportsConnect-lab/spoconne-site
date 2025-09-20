@@ -1,97 +1,92 @@
-// ==== 年の自動表示 ====
-(() => {
+/* ===============================
+   script.js  — タブ切替の完全版
+   ・index.html（#gs-tabs / #gs-panels）
+   ・programs.html（#prog-tabs / #prog-panels）
+   ・他要素には一切影響しないスコープ設計
+   =============================== */
+document.addEventListener("DOMContentLoaded", () => {
+  /* ---------- 年の自動表示（任意） ---------- */
   const y = document.getElementById("y");
   if (y) y.textContent = new Date().getFullYear();
-})();
 
-// ==== タブ切替（色：チーム=オレンジ / コーチ=水色 / 企業=緑）====
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".tab-btn");
-  const panels  = document.querySelectorAll(".tab-panel");
-  if (!buttons.length) return;
+  /* ---------- 汎用タブセットアップ ---------- */
+  const setupTabs = (btnContainerSelector, panelContainerSelector, defaultKey) => {
+    const btnContainer   = document.querySelector(btnContainerSelector);
+    const panelContainer = document.querySelector(panelContainerSelector);
+    if (!btnContainer || !panelContainer) return;
 
-  const resetBtn = (btn) => {
-    // 余計な色を全部外す（過去に残った bg-brand も含む）
-    btn.classList.remove(
-      "bg-orange-500","bg-sky-500","bg-emerald-500","bg-brand",
-      "text-white","border-transparent","shadow"
-    );
-    // 非アクティブの基本見た目に戻す
-    btn.classList.add("text-slate-700","border-slate-300");
-    btn.setAttribute("aria-selected","false");
-  };
+    const buttons = Array.from(btnContainer.querySelectorAll(".tab-btn"));
+    const panels  = Array.from(panelContainer.querySelectorAll(".tab-panel"));
+    if (!buttons.length || !panels.length) return;
 
-  const activateBtn = (btn) => {
-    resetBtn(btn);
-    const t = btn.dataset.target;
-    if (t === "tab-teams")       btn.classList.add("bg-orange-500");
-    else if (t === "tab-coaches")btn.classList.add("bg-sky-500");
-    else                         btn.classList.add("bg-emerald-500");
-    btn.classList.add("text-white","border-transparent","shadow");
-    btn.classList.remove("text-slate-700","border-slate-300");
-    btn.setAttribute("aria-selected","true");
-  };
+    // data-target -> panelElement の対応表
+    const panelMap = new Map();
+    panels.forEach(p => panelMap.set(p.id, p));
 
-  const show = (btn) => {
-    // ボタンの見た目
-    buttons.forEach(resetBtn);
-    activateBtn(btn);
-    // パネル表示
-    panels.forEach(p => p.classList.add("hidden"));
-    const panel = document.getElementById(btn.dataset.target);
-    if (panel) panel.classList.remove("hidden");
-  };
+    const resetButtons = () => {
+      buttons.forEach(b => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-selected", "false");
+      });
+    };
 
-  // クリック
-  buttons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      show(btn);
-    });
-  });
+    const resetPanels = () => {
+      panels.forEach(p => {
+        p.classList.remove("is-show");
+        p.classList.add("hidden");
+      });
+    };
 
-  // 初期表示：最初のボタンをアクティブ
-  show(buttons[0]);
-});
+    const setActive = (key) => {
+      // ボタン
+      resetButtons();
+      const activeBtn = buttons.find(b => b.dataset.target === key);
+      if (activeBtn) {
+        activeBtn.classList.add("is-active");
+        activeBtn.setAttribute("aria-selected", "true");
+      }
 
-// ==== モバイルナビ ====
-(() => {
-  const btn = document.getElementById("menuBtn");
-  const nav = document.getElementById("mobileNav");
-  if (!btn || !nav) return;
-  btn.addEventListener("click", () => nav.classList.toggle("hidden"));
-})();
+      // パネル
+      resetPanels();
+      const activePanel = panelMap.get(key);
+      if (activePanel) {
+        activePanel.classList.remove("hidden");
+        activePanel.classList.add("is-show");
+      }
+    };
 
-// ===== Programs タブ切り替え（色＆表示）=====
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-  const panels = {
-    'tab-teams'     : document.getElementById('tab-teams'),
-    'tab-coaches'   : document.getElementById('tab-coaches'),
-    'tab-companies' : document.getElementById('tab-companies'),
-  };
+    // クリックで切替
+    buttons.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const key = btn.dataset.target;
+        if (!key || !panelMap.has(key)) return;
+        setActive(key);
 
-  function show(id) {
-    // ボタン状態
-    buttons.forEach(b => {
-      const active = b.dataset.target === id;
-      b.classList.toggle('is-active', active);
-      b.setAttribute('aria-selected', active ? 'true' : 'false');
+        // 小さくスクロール（見出し直下に寄せたい場合）
+        const main = document.querySelector("main");
+        if (main) window.scrollTo({ top: main.offsetTop - 16, behavior: "smooth" });
+      });
     });
 
-    // パネル状態
-    Object.entries(panels).forEach(([key, el]) => {
-      el.classList.toggle('is-show', key === id);
-    });
+    // 初期表示（指定がなければ最初のボタン）
+    const firstKey = defaultKey || (buttons[0] ? buttons[0].dataset.target : null);
+    if (firstKey && panelMap.has(firstKey)) setActive(firstKey);
+  };
 
-    // 見出しの近くまで少しスクロール（任意）
-    const main = document.querySelector('main') || document.body;
-    window.scrollTo({ top: (main.offsetTop || 0) + 16, behavior: 'smooth' });
+  /* ---------- ページごとの初期化 ---------- */
+  // programs.html 用
+  setupTabs("#prog-tabs", "#prog-panels", "tab-teams");
+
+  // index.html（サービスの始め方）用
+  setupTabs("#gs-tabs", "#gs-panels", "tab-teams");
+
+  /* ---------- モバイルナビ（任意） ---------- */
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  if (menuBtn && mobileNav) {
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("hidden");
+    });
   }
-
-  // クリック
-  buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.target)));
-
-  // 初期表示：チームにしたい場合は 'tab-teams'、コーチなら 'tab-coaches'
-  show('tab-teams');
 });
