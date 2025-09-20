@@ -111,44 +111,67 @@
     </div>
   </footer>
 
-  <!-- Tabs Script -->
-  <script>
-    const tabs = {
-      team: document.getElementById('tab-team'),
-      coach: document.getElementById('tab-coach'),
-      company: document.getElementById('tab-company'),
-    };
-    const panels = {
-      team: document.getElementById('panel-team'),
-      coach: document.getElementById('panel-coach'),
-      company: document.getElementById('panel-company'),
+ <!-- Tabs Script (programs.html 専用) -->
+<script>
+  (function () {
+    // 対象を限定（index.htmlのタブ制御とはセレクタを分ける）
+    const buttons = document.querySelectorAll('#prog-tabs .tab-btn');
+    const panels  = document.querySelectorAll('#prog-panels .tab-panel');
+    if (!buttons.length || !panels.length) return;
+
+    // ターゲットごとの色（ホームと同じ配色）
+    const colorById = {
+      'tab-teams':     'bg-orange-500',   // チーム=オレンジ
+      'tab-coaches':   'bg-sky-500',      // コーチ=水色
+      'tab-companies': 'bg-emerald-500'   // 企業=緑
     };
 
-    const activeBtn = 'bg-blue-600 text-white shadow-md';
-    const inactiveBtn = 'bg-white text-gray-700 hover:bg-blue-50';
-
-    function setActive(key){
-      // buttons
-      Object.entries(tabs).forEach(([k, el])=>{
-        el.classList.remove('bg-blue-600','text-white','shadow-md','bg-white','text-gray-700','hover:bg-blue-50');
-        el.classList.add(...(k === key ? activeBtn.split(' ') : inactiveBtn.split(' ')));
+    // すべてのボタンを非アクティブに戻す
+    function resetButtons() {
+      buttons.forEach(b => {
+        b.classList.remove(
+          'bg-orange-500','bg-sky-500','bg-emerald-500',
+          'text-white','shadow','border-transparent'
+        );
+        b.classList.add('bg-white','text-slate-700','border-blue-200');
+        b.setAttribute('aria-selected', 'false');
       });
-      // panels
-      Object.entries(panels).forEach(([k, el])=>{
-        if(k === key){ el.classList.remove('hidden'); el.classList.add('block'); }
-        else { el.classList.remove('block'); el.classList.add('hidden'); }
-      });
-      // スクロール位置を少し上げる
-      const main = document.querySelector('main');
-      if(main) window.scrollTo({ top: main.offsetTop - 16, behavior: 'smooth' });
     }
 
-    tabs.team.addEventListener('click', ()=>setActive('team'));
-    tabs.coach.addEventListener('click', ()=>setActive('coach'));
-    tabs.company.addEventListener('click', ()=>setActive('company'));
+    // パネル切替
+    function show(id) {
+      // パネル表示
+      panels.forEach(p => p.classList.add('hidden'));
+      const panel = document.getElementById(id);
+      if (panel) panel.classList.remove('hidden');
 
-    // 初期表示：コーチ向け
-    setActive('coach');
+      // ボタン表示
+      resetButtons();
+      const btn = Array.from(buttons).find(b => b.dataset.target === id);
+      if (btn) {
+        const color = colorById[id] || 'bg-sky-500';
+        btn.classList.remove('bg-white','text-slate-700');
+        btn.classList.add(color,'text-white','shadow','border-transparent');
+        btn.setAttribute('aria-selected','true');
+      }
+    }
+
+    // クリック
+    buttons.forEach(b => {
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        show(b.dataset.target);
+      });
+    });
+
+    // 初期表示：data-active="true" のボタンがあればそれを、無ければ先頭
+    const initial = document.querySelector('#prog-tabs .tab-btn[data-active="true"]');
+    show(initial ? initial.dataset.target : buttons[0].dataset.target);
+  })();
+</script>
+
+    // 初期表示：チーム向け
+    setActive('team');
   </script>
 </body>
 </html>
