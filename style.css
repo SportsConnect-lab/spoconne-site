@@ -1,86 +1,103 @@
-/* ===== 全体共通 ===== */
-html {
-  scroll-behavior: smooth;
+/* =========================
+   Base
+========================= */
+html { scroll-behavior: smooth; }
+
+/* =========================
+   Segmented Tabs（おしゃれ版）
+   .tabs に“バー”、.tab-btn が“ピル”のボタン
+========================= */
+.tabs{
+  display:flex;
+  gap:.5rem;
+  justify-content:center;
+  align-items:center;
+  width:fit-content;
+  margin:1.25rem auto 0;
+  padding:.35rem;
+  border-radius:9999px;
+  background:#ffffff;
+  border:1px solid #e5e7eb;          /* slate-200 */
+  box-shadow:0 10px 25px rgba(2,6,23,.06); /* ふんわり影 */
 }
 
-/* ===== タブコンテナ ===== */
-.tabs {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.5rem;
+/* タブボタンのベース（透明 → アクティブで色付く） */
+.tab-btn{
+  appearance:none;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  padding:.6rem 1.15rem;
+  border-radius:9999px;
+  font-weight:700;
+  font-size:.95rem;
+  color:#334155;                      /* slate-700 */
+  background:transparent;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .15s ease,
+    box-shadow .25s ease;
 }
 
-/* ===== タブボタンのベース ===== */
-.tab-btn {
-  appearance: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0.6rem 1.5rem;
-  border-radius: 999px;         /* 丸み */
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #334155;               /* slate-700 */
-  background: #f8fafc;          /* slate-50 */
-  border: 1px solid #e2e8f0;    /* slate-200 */
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+.tab-btn:hover{
+  color:#0f172a;                      /* slate-900 */
+  transform:translateY(-1px);
 }
 
-.tab-btn:hover {
-  background: #f1f5f9;          /* slate-100 */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* キーボード操作のとき */
+.tab-btn:focus-visible{
+  outline:3px solid rgba(59,130,246,.25); /* sky 系リング */
+  outline-offset:2px;
+  border-radius:9999px;
 }
 
-/* ===== アクティブ状態（対象ごとに色分け） ===== */
-.tab-btn.is-active[data-target="tab-teams"] {
-  background: #f97316;   /* orange-500 */
-  border-color: #f97316;
-  color: #fff;
+/* ---- アクティブ（対象ごとに配色） ---- */
+.tab-btn.is-active[data-target="tab-teams"]{
+  color:#fff;
+  background:linear-gradient(180deg,#fb923c 0%,#f97316 100%);  /* orange-400→500 */
+  box-shadow:0 6px 16px rgba(249,115,22,.35);
 }
 
-.tab-btn.is-active[data-target="tab-coaches"] {
-  background: #0ea5e9;   /* sky-500 */
-  border-color: #0ea5e9;
-  color: #fff;
+.tab-btn.is-active[data-target="tab-coaches"]{
+  color:#fff;
+  background:linear-gradient(180deg,#38bdf8 0%,#0ea5e9 100%);  /* sky-400→500 */
+  box-shadow:0 6px 16px rgba(14,165,233,.35);
 }
 
-.tab-btn.is-active[data-target="tab-companies"] {
-  background: #10b981;   /* emerald-500 */
-  border-color: #10b981;
-  color: #fff;
+.tab-btn.is-active[data-target="tab-companies"]{
+  color:#fff;
+  background:linear-gradient(180deg,#34d399 0%,#10b981 100%);  /* emerald-400→500 */
+  box-shadow:0 6px 16px rgba(16,185,129,.35);
 }
 
-/* ===== パネルの表示/非表示 ===== */
-.tab-panel {
-  display: none;
-  margin-top: 2rem;
+/* =========================
+   パネルの表示/非表示（切替）
+========================= */
+.tab-panel{ display:none; margin-top:2rem; }
+.tab-panel.is-show{
+  display:block;
+  animation:fadeIn .35s ease;
+}
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(8px); }
+  to  { opacity:1; transform:translateY(0); }
 }
 
-.tab-panel.is-show {
-  display: block;
-  animation: fadeIn 0.4s ease;
+/* =========================
+   カード（メリットの箱）
+========================= */
+.card{
+  background:#fff;
+  border:1px solid #e5e7eb;          /* slate-200 */
+  border-radius:12px;
+  padding:1.5rem;
+  box-shadow:0 2px 8px rgba(2,6,23,.05);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
-/* ===== パネル内カードデザイン ===== */
-.card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-/* ===== アニメーション ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(2,6,23,.08);
+  border-color:#e2e8f0;              /* ほんの少しだけ強めに */
 }
