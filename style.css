@@ -1,69 +1,61 @@
-html{scroll-behavior:smooth}
-
-/* タブボタンのON状態 */
-.tab-btn[data-active="true"]{
-  background:#0ea5e9; color:#fff;
-}
-/* ====== カード（課題と解決策） ====== */
-.card-team { 
-  background-color: rgba(255, 165, 0, 0.1); /* 初期オレンジ薄め */
-  transition: background 0.3s ease;
-}
-.card-team:hover {
-  background-color: rgba(255, 165, 0, 0.3); /* ホバーで明るく */
+html {
+  scroll-behavior: smooth;
 }
 
-.card-coach {
-  background-color: rgba(0, 123, 255, 0.1);
-  transition: background 0.3s ease;
-}
-.card-coach:hover {
-  background-color: rgba(0, 123, 255, 0.3);
-}
-
-.card-company {
-  background-color: rgba(40, 167, 69, 0.1);
-  transition: background 0.3s ease;
-}
-.card-company:hover {
-  background-color: rgba(40, 167, 69, 0.3);
-}
-
-/* ====== サービスの始め方：タブ ====== */
-.tab-btn[data-target="tab-teams"][data-active="true"] {
-  background-color: #f97316; /* オレンジ */
-  color: white;
-}
-
-.tab-btn[data-target="tab-coaches"][data-active="true"] {
-  background-color: #0ea5e9; /* 青 */
-  color: white;
-}
-
-.tab-btn[data-target="tab-companies"][data-active="true"] {
-  background-color: #10b981; /* 緑 */
-  color: white;
-}
-/* タブが選択されたときの色 */
+/* ================= タブボタン ================= */
+.tab-btn[data-target="tab-teams"][data-active="true"],
 .tab-btn[data-target="tab-teams"][aria-selected="true"] {
   background-color: #f97316; /* オレンジ */
   color: #fff;
 }
 
+.tab-btn[data-target="tab-coaches"][data-active="true"],
 .tab-btn[data-target="tab-coaches"][aria-selected="true"] {
   background-color: #0ea5e9; /* 水色 */
   color: #fff;
 }
 
+.tab-btn[data-target="tab-companies"][data-active="true"],
 .tab-btn[data-target="tab-companies"][aria-selected="true"] {
   background-color: #10b981; /* 緑 */
   color: #fff;
 }
 
-/* STEPバッジ */
-.step{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:.25rem .5rem;border-radius:.5rem;
-  background:#e2e8f0;color:#334155;font-weight:700;font-size:.75rem;
-  min-width:3.5rem
+/* ================= カード（プログラム詳細） ================= */
+.card-team {
+  background-color: rgba(249, 115, 22, 0.1); /* オレンジ淡 */
+  transition: background 0.3s ease;
+}
+.card-team:hover {
+  background-color: rgba(249, 115, 22, 0.3); /* オレンジ濃 */
+}
+
+.card-coach {
+  background-color: rgba(14, 165, 233, 0.1); /* 水色淡 */
+  transition: background 0.3s ease;
+}
+.card-coach:hover {
+  background-color: rgba(14, 165, 233, 0.3); /* 水色濃 */
+}
+
+.card-company {
+  background-color: rgba(16, 185, 129, 0.1); /* 緑淡 */
+  transition: background 0.3s ease;
+}
+.card-company:hover {
+  background-color: rgba(16, 185, 129, 0.3); /* 緑濃 */
+}
+
+/* ================= STEPバッジ ================= */
+.step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+  background: #e2e8f0;
+  color: #334155;
+  font-weight: 700;
+  font-size: .75rem;
+  min-width: 3.5rem;
 }
