@@ -61,3 +61,37 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!btn || !nav) return;
   btn.addEventListener("click", () => nav.classList.toggle("hidden"));
 })();
+
+// ===== Programs タブ切り替え（色＆表示）=====
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+  const panels = {
+    'tab-teams'     : document.getElementById('tab-teams'),
+    'tab-coaches'   : document.getElementById('tab-coaches'),
+    'tab-companies' : document.getElementById('tab-companies'),
+  };
+
+  function show(id) {
+    // ボタン状態
+    buttons.forEach(b => {
+      const active = b.dataset.target === id;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+
+    // パネル状態
+    Object.entries(panels).forEach(([key, el]) => {
+      el.classList.toggle('is-show', key === id);
+    });
+
+    // 見出しの近くまで少しスクロール（任意）
+    const main = document.querySelector('main') || document.body;
+    window.scrollTo({ top: (main.offsetTop || 0) + 16, behavior: 'smooth' });
+  }
+
+  // クリック
+  buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.target)));
+
+  // 初期表示：チームにしたい場合は 'tab-teams'、コーチなら 'tab-coaches'
+  show('tab-teams');
+});

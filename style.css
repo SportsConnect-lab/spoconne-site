@@ -54,3 +54,50 @@ html {
 
 .card-company { background-color: rgba(16,185,129,.10);  transition: background .3s ease; }
 .card-company:hover { background-color: rgba(16,185,129,.30); }
+
+/* ============ Programs タブの見た目 ============ */
+.tabs {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 9999px;
+  padding: .5rem 1.25rem;
+  border: 1px solid #e5e7eb;          /* slate-200 相当 */
+  background: #fff;
+  color: #334155;                      /* slate-700 相当 */
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 1px 0 rgba(0,0,0,.04);
+  transition: box-shadow .2s ease, transform .05s ease;
+}
+.tab-btn:hover,
+.tab-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59,130,246,.12); /* 薄いフォーカス輪郭 */
+}
+
+/* アクティブ色（ホームと同じ配色） */
+.tab-btn.is-active[data-target="tab-teams"]{
+  background: #f97316;   /* オレンジ */
+  border-color: #f97316;
+  color: #fff;
+}
+.tab-btn.is-active[data-target="tab-coaches"]{
+  background: #0ea5e9;   /* 水色 */
+  border-color: #0ea5e9;
+  color: #fff;
+}
+.tab-btn.is-active[data-target="tab-companies"]{
+  background: #10b981;   /* 緑 */
+  border-color: #10b981;
+  color: #fff;
+}
+
+/* パネルの表示/非表示（display 切り替え） */
+.tab-panel { display: none; }
+.tab-panel.is-show { display: block; }

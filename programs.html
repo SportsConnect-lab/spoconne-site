@@ -22,34 +22,23 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative">
-    <!-- 画像パスは存在するものに変更してください -->
-    <img src="./images/hero.jpg" alt="" class="w-full h-[42vh] md:h-[52vh] object-cover" />
-    <div class="absolute inset-0 bg-black/50"></div>
-
- <!-- ====== プログラム：タブ & パネル ====== -->
-<section class="relative mt-16 pb-24">
+  <!-- ===== Hero（白背景のシンプル見出し） ===== -->
+<section class="pt-10">
   <div class="max-w-6xl mx-auto px-4 sm:px-8" id="prog">
     <h1 class="text-3xl sm:text-4xl font-extrabold text-center tracking-wide">プログラム</h1>
     <p class="mt-3 text-center text-slate-600">対象を選ぶと、最適な内容が表示されます。</p>
 
-    <!-- タブ -->
-    <div class="mt-8 flex justify-center" id="prog-tabs">
-      <div class="inline-flex rounded-2xl border border-slate-200 bg-white/90 shadow p-1">
-        <div class="mt-6 flex flex-wrap gap-3">
-  <button type="button"
-    class="tab-btn rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-    data-target="tab-teams" data-active="true">チーム向け</button>
+    <!-- ===== タブ（上部） ===== -->
+    <div class="mt-6 flex justify-center" id="prog-tabs">
+      <div class="tabs">
+        <button type="button" class="tab-btn is-active" data-target="tab-teams" aria-selected="true">チーム向け</button>
+        <button type="button" class="tab-btn" data-target="tab-coaches" aria-selected="false">コーチ向け</button>
+        <button type="button" class="tab-btn" data-target="tab-companies" aria-selected="false">企業向け</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <button type="button"
-    class="tab-btn rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-    data-target="tab-coaches">コーチ向け</button>
-
-  <button type="button"
-    class="tab-btn rounded-full border border-blue-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-    data-target="tab-companies">企業向け</button>
-</div>
 <!-- ====== パネル群 ====== -->
 <div id="prog-panels" class="mt-10">
 
