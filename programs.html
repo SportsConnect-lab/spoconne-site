@@ -112,40 +112,35 @@
   </footer>
 
  <!-- Tabs Script (programs.html 専用) -->
+<!-- Tabs Script -->
 <script>
   (function () {
-    // 対象を限定（index.htmlのタブ制御とはセレクタを分ける）
     const buttons = document.querySelectorAll('#prog-tabs .tab-btn');
     const panels  = document.querySelectorAll('#prog-panels .tab-panel');
     if (!buttons.length || !panels.length) return;
 
-    // ターゲットごとの色（ホームと同じ配色）
     const colorById = {
-      'tab-teams':     'bg-orange-500',   // チーム=オレンジ
-      'tab-coaches':   'bg-sky-500',      // コーチ=水色
-      'tab-companies': 'bg-emerald-500'   // 企業=緑
+      'tab-teams': 'bg-orange-500',   // チーム=オレンジ
+      'tab-coaches': 'bg-sky-500',    // コーチ=水色
+      'tab-companies': 'bg-emerald-500' // 企業=緑
     };
 
-    // すべてのボタンを非アクティブに戻す
     function resetButtons() {
       buttons.forEach(b => {
-        b.classList.remove(
-          'bg-orange-500','bg-sky-500','bg-emerald-500',
-          'text-white','shadow','border-transparent'
-        );
+        b.classList.remove('bg-orange-500','bg-sky-500','bg-emerald-500',
+                           'text-white','shadow','border-transparent');
         b.classList.add('bg-white','text-slate-700','border-blue-200');
-        b.setAttribute('aria-selected', 'false');
+        b.setAttribute('aria-selected','false');
       });
     }
 
-    // パネル切替
     function show(id) {
-      // パネル表示
+      // パネル切替
       panels.forEach(p => p.classList.add('hidden'));
       const panel = document.getElementById(id);
       if (panel) panel.classList.remove('hidden');
 
-      // ボタン表示
+      // ボタン切替
       resetButtons();
       const btn = Array.from(buttons).find(b => b.dataset.target === id);
       if (btn) {
@@ -156,22 +151,16 @@
       }
     }
 
-    // クリック
+    // イベント登録
     buttons.forEach(b => {
-      b.addEventListener('click', (e) => {
+      b.addEventListener('click', e => {
         e.preventDefault();
         show(b.dataset.target);
       });
     });
 
-    // 初期表示：data-active="true" のボタンがあればそれを、無ければ先頭
+    // 初期表示
     const initial = document.querySelector('#prog-tabs .tab-btn[data-active="true"]');
     show(initial ? initial.dataset.target : buttons[0].dataset.target);
   })();
 </script>
-
-    // 初期表示：チーム向け
-    setActive('team');
-  </script>
-</body>
-</html>
