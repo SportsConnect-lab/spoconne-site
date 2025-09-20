@@ -44,6 +44,21 @@ html{scroll-behavior:smooth}
   background-color: #10b981; /* 緑 */
   color: white;
 }
+/* タブが選択されたときの色 */
+.tab-btn[data-target="tab-teams"][aria-selected="true"] {
+  background-color: #f97316; /* オレンジ */
+  color: #fff;
+}
+
+.tab-btn[data-target="tab-coaches"][aria-selected="true"] {
+  background-color: #0ea5e9; /* 水色 */
+  color: #fff;
+}
+
+.tab-btn[data-target="tab-companies"][aria-selected="true"] {
+  background-color: #10b981; /* 緑 */
+  color: #fff;
+}
 
 /* STEPバッジ */
 .step{
