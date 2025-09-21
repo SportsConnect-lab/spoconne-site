@@ -6,6 +6,31 @@
   <title>プログラム | OTOBA</title>
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  /* programs.html 専用上書き（他ページは pill のまま） */
+  #prog-tabs .tab-btn{
+    border-radius:12px !important;     /* ← 丸四角固定 */
+    border:1px solid #e5e7eb;
+    background:#fff; color:#334155; font-weight:600;
+    padding:.6rem 1.2rem; transition:all .25s ease;
+  }
+  #prog-tabs .tab-btn:hover{ background:#f9fafb; color:#0f172a; }
+
+  /* アクティブ色（必要に応じて） */
+  #prog-tabs .tab-btn[aria-selected="true"][data-target="tab-teams"]{
+    color:#fff; background:linear-gradient(180deg,#fb923c 0%,#f97316 100%);
+  }
+  #prog-tabs .tab-btn[aria-selected="true"][data-target="tab-coaches"]{
+    color:#fff; background:linear-gradient(180deg,#38bdf8 0%,#0ea5e9 100%);
+  }
+  #prog-tabs .tab-btn[aria-selected="true"][data-target="tab-companies"]{
+    color:#fff; background:linear-gradient(180deg,#34d399 0%,#10b981 100%);
+  }
+
+  /* バー自体の角丸も少し弱め（任意） */
+  #prog-tabs .tabs{ border-radius:14px; }
+</style>
+
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Header -->
@@ -31,7 +56,7 @@
     <!-- ===== タブ（上部） ===== -->
     <div class="mt-6 flex justify-center" id="prog-tabs">
       <!-- ==== Tabs ==== -->
-　　　　<div class="tabs" id="prog-tabs">
+　　　　<div class="tabs">
   　　　<button class="tab-btn is-active" data-target="tab-teams">チーム向け</button>
   　　　<button class="tab-btn" data-target="tab-coaches">コーチ向け</button>
   　　　<button class="tab-btn" data-target="tab-companies">企業向け</button>
