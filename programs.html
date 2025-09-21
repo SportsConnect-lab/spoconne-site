@@ -49,24 +49,32 @@
 
   <!-- ===== Hero（画像の上にテキストを重ねる） ===== -->
 <section class="relative overflow-hidden">
-  <!-- 高さを決める箱（相対配置） -->
   <div class="relative h-[44vh] sm:h-[52vh]">
-    <!-- 背景画像：親に対して絶対配置で全面 -->
     <img
-      src="./images/program-bg.png"   ←画像パスはあなたのものに -->
+      src="./images/hero-programs.jpg"  <!-- ←画像パスはあなたのものに -->
       alt=""
       class="absolute inset-0 w-full h-full object-cover"
     />
-    <!-- 暗めオーバーレイ（クリックは透過） -->
     <div class="absolute inset-0 bg-slate-900/35 pointer-events-none"></div>
 
-    <!-- 重なるテキスト（最前面） -->
     <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4">
       <h1 class="text-4xl sm:text-5xl font-extrabold">プログラム</h1>
       <p class="mt-3 text-white/90">対象を選ぶと、最適な内容が表示されます。</p>
     </div>
   </div>
 </section>
+
+<!-- タブはヒーローの外 -->
+<section class="py-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-8">
+    <div class="tabs" id="prog-tabs">
+      <button class="tab-btn is-active" data-target="tab-teams">チーム向け</button>
+      <button class="tab-btn" data-target="tab-coaches">コーチ向け</button>
+      <button class="tab-btn" data-target="tab-companies">企業向け</button>
+    </div>
+  </div>
+</section>
+
 
 <!-- ===== タブ（ヒーローの外） ===== -->
 <section class="py-6">
