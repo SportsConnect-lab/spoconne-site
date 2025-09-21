@@ -98,3 +98,33 @@ html { scroll-behavior: smooth; }
   box-shadow:0 10px 20px rgba(2,6,23,.08);
   border-color:#e2e8f0;
 }
+/* ===== タブの大きさを常に固定 ===== */
+#gs-tabs .tab-btn{
+  box-sizing: border-box;
+  width: 180px;          /* 横幅：お好みで調整 */
+  height: 56px;          /* 高さ：お好みで調整 */
+  padding: 0 20px;       /* 上下の余白は 0 にして高さを固定 */
+  line-height: 56px;     /* テキストを縦中央に */
+  flex: 0 0 56px;        /* 伸縮を禁止（縦レイアウトでも伸びない） */
+  border: 1px solid transparent; /* アクティブ時との境界差をなくす */
+  transition: background .25s ease, color .25s ease, box-shadow .25s ease;
+  transform: none;       /* ホバーで動かないよう固定 */
+}
+
+/* アクティブ時も寸法を一切変えない（色だけ変える） */
+#gs-tabs .tab-btn.is-active{
+  width: 180px;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 20px;
+  border-color: transparent;
+  transform: none;
+}
+
+/* （任意）ホバー時に上下へ動かないようにする */
+#gs-tabs .tab-btn:hover{
+  transform: none;
+}
+
+/* パネルの余白はこのままでOK（表示/非表示のみ切り替え） */
+#gs-panels .tab-panel{ margin-top: 2rem; }
