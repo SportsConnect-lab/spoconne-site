@@ -47,27 +47,35 @@
     </div>
   </header>
 
-  <!-- ===== Hero（白背景のシンプル見出し） ===== -->
-<!-- ===== Hero（背景付き見出し） ===== -->
-<section class="relative pt-16 pb-20 bg-cover bg-center bg-no-repeat" 
-         style="background-image: url('./images/program-bg.png');">
-  <!-- 半透明オーバーレイ（必要なら） -->
-  <div class="absolute inset-0 bg-black/30"></div>
+  <!-- ===== Hero（背景画像＋見出し） ===== -->
+<section class="relative">
+  <!-- 背景画像 -->
+  <img
+    src="./images/program-bg.png"  <!-- ←あなたの画像パスに変更 -->
+    alt=""
+    class="absolute inset-0 w-full h-[44vh] sm:h-[52vh] object-cover"
+  />
+  <!-- 暗いオーバーレイ（クリックは透過） -->
+  <div class="absolute inset-0 bg-slate-900/35 pointer-events-none"></div>
 
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-8 text-center text-white">
-    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-wide">プログラム</h1>
-    <p class="mt-3">対象を選ぶと、最適な内容が表示されます。</p>
+  <!-- ヒーロー内テキスト（クリック可能にするため z-10） -->
+  <div class="relative z-10 h-[44vh] sm:h-[52vh] flex flex-col items-center justify-center text-center text-white px-4">
+    <h1 class="text-4xl sm:text-5xl font-extrabold">プログラム</h1>
+    <p class="mt-3 text-white/90">対象を選ぶと、最適な内容が表示されます。</p>
+  </div>
+</section>
 
-    <!-- ===== タブ ===== -->
-    <div class="mt-6 flex justify-center">
-      <div class="tabs">
-        <button class="tab-btn is-active" data-target="tab-teams">チーム向け</button>
-        <button class="tab-btn" data-target="tab-coaches">コーチ向け</button>
-        <button class="tab-btn" data-target="tab-companies">企業向け</button>
-      </div>
+<!-- ===== タブ（ヒーローの外に配置） ===== -->
+<section class="py-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-8">
+    <div class="tabs" id="prog-tabs">
+      <button class="tab-btn is-active" data-target="tab-teams">チーム向け</button>
+      <button class="tab-btn" data-target="tab-coaches">コーチ向け</button>
+      <button class="tab-btn" data-target="tab-companies">企業向け</button>
     </div>
   </div>
 </section>
+
 
 
 <!-- ====== パネル群 ====== -->
