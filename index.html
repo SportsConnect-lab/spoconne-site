@@ -537,51 +537,7 @@
   })();
 </script>
 <!-- これを </body> の直前に貼り付け -->
-<script>
-(() => {
-  function initTabs() {
-    const section = document.getElementById('getting-started');
-    if (!section) return;
 
-    const buttons = section.querySelectorAll('.tab-btn');
-    const panels  = section.querySelectorAll('.tab-panel');
-    if (!buttons.length || !panels.length) return;
-
-    const show = (id) => {
-      // パネルの表示/非表示
-      panels.forEach(p => p.classList.add('hidden'));
-      const target = document.getElementById(id);
-      if (target) target.classList.remove('hidden');
-
-      // ボタンの見た目とARIA
-      buttons.forEach(b => {
-        const active = (b.dataset.target === id);
-        b.classList.toggle('bg-brand', active);
-        b.classList.toggle('text-white', active);
-        b.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-    };
-
-    // イベント委譲（将来ボタンを増やしてもOK）
-    section.addEventListener('click', (e) => {
-      const btn = e.target.closest('.tab-btn');
-      if (!btn) return;
-      e.preventDefault();
-      show(btn.dataset.target);
-    });
-
-    // 初期表示（data-active="true" があればそれを。なければ先頭）
-    const active = Array.from(buttons).find(b => b.dataset.active === 'true') || buttons[0];
-    if (active) show(active.dataset.target);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTabs);
-  } else {
-    initTabs();
-  }
-})();
-</script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const section = document.getElementById('getting-started');
