@@ -155,7 +155,7 @@ html { scroll-behavior: smooth; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;                     /* 固定高さ */
+  height: 30px;                     /* 固定高さ */
   padding: 0 22px;                  /* 横幅は文字に応じて・見た目は一定 */
   line-height: 1;                   /* 行間で高さがブレないように */
   border-radius:9999px;
