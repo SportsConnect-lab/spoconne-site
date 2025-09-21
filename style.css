@@ -113,7 +113,7 @@ html { scroll-behavior: smooth; }
 
 /* アクティブ時も寸法を一切変えない（色だけ変える） */
 #gs-tabs .tab-btn.is-active{
-  width: 1800px;
+  width: 180px;
   height: 56px;
   line-height: 56px;
   padding: 0 20px;
@@ -128,3 +128,73 @@ html { scroll-behavior: smooth; }
 
 /* パネルの余白はこのままでOK（表示/非表示のみ切り替え） */
 #gs-panels .tab-panel{ margin-top: 2rem; }
+/* === Fix: tabs always horizontal & same size === */
+.tabs{
+  display:flex;
+  flex-direction: row !important;   /* ←横並びを強制 */
+  flex-wrap: nowrap;
+  justify-content:center;
+  align-items:center;
+  gap:.5rem;
+  width:fit-content;
+  margin:1.25rem auto 0;
+  padding:.35rem;
+  border-radius:9999px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  box-shadow:0 10px 25px rgba(2,6,23,.06);
+}
+
+.tab-btn{
+  appearance:none;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  /* ←文字を1行に固定 & 高さを揃える */
+  white-space: nowrap;              /* 折り返し禁止 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;                     /* 固定高さ */
+  padding: 0 22px;                  /* 横幅は文字に応じて・見た目は一定 */
+  line-height: 1;                   /* 行間で高さがブレないように */
+  border-radius:9999px;
+
+  font-weight:700;
+  font-size:.95rem;
+  color:#334155;
+  background:transparent;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .15s ease,
+    box-shadow .25s ease;
+}
+
+.tab-btn:hover{
+  color:#0f172a;
+  transform: translateY(-1px);
+}
+
+.tab-btn:focus-visible{
+  outline:3px solid rgba(59,130,246,.25);
+  outline-offset:2px;
+  border-radius:9999px;
+}
+
+/* アクティブ色（サイズは変えない） */
+.tab-btn.is-active[data-target="tab-teams"]{
+  color:#fff;
+  background:linear-gradient(180deg,#fb923c 0%,#f97316 100%);
+  box-shadow:0 6px 16px rgba(249,115,22,.35);
+}
+.tab-btn.is-active[data-target="tab-coaches"]{
+  color:#fff;
+  background:linear-gradient(180deg,#38bdf8 0%,#0ea5e9 100%);
+  box-shadow:0 6px 16px rgba(14,165,233,.35);
+}
+.tab-btn.is-active[data-target="tab-companies"]{
+  color:#fff;
+  background:linear-gradient(180deg,#34d399 0%,#10b981 100%);
+  box-shadow:0 6px 16px rgba(16,185,129,.35);
+}
