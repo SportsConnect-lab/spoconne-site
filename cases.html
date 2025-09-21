@@ -1,59 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>導入事例 | OTOBA</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>導入実績 | OTOBA</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="antialiased font-sans text-slate-800">
-  <!-- Header -->
-  <header class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur border-b border-slate-200 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-extrabold text-lg sm:text-xl text-brand">OTOBA</a>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- ===== Header（必要なら index.html と共通化）===== -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-100">
+    <div class="mx-auto max-w-7xl px-4 md:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-bold text-blue-600">OTOBA</a>
       <nav class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-brand">コンセプト</a>
-        <a href="programs.html" class="hover:text-brand">プログラム</a>
-        <a href="cases.html" class="hover:text-brand text-brand font-bold">事例</a>
-        <a href="price.html" class="hover:text-brand">料金</a>
-        <a href="contact.html" class="hover:text-brand">問い合わせ</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="programs.html">プログラム</a>
+        <a href="cases.html" class="text-blue-600">事例</a>
+        <a href="price.html">料金</a>
+        <a href="contact.html">問い合わせ</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative pt-24 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h1 class="text-4xl sm:text-5xl font-bold">導入事例</h1>
-      <p class="mt-4 text-lg text-slate-200">OTOBAを活用した実際の取り組み</p>
+  <!-- ===== 導入実績 ===== -->
+<section id="cases" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <p class="text-sm tracking-widest text-slate-500">INTRODUCTIONS</p>
+      <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold">導入実績</h2>
+      <p class="mt-3 text-slate-600">一部のチームをご紹介します（写真は仮画像）。</p>
     </div>
-  </section>
 
-  <!-- Cases -->
-  <section class="py-16 sm:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
-      <article class="p-6 rounded-2xl border bg-white shadow-sm">
-        <h3 class="font-semibold">県立A高校 × ○○社 × コーチB</h3>
-        <p class="mt-2 text-sm text-slate-600">年間計画で県大会ベスト4。地域企業のブランド向上にもつながった。</p>
+    <!-- カード一覧 -->
+    <div class="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- 1 富山大学医学部ラグビー部 -->
+      <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+        <figure class="relative">
+          <img src="https://images.unsplash.com/photo-1518600506278-4e8ef466b810?q=80&w=1600&auto=format&fit=crop"
+               alt="ラグビーの仮画像"
+               class="w-full h-full object-cover aspect-[16/10] sm:aspect-[4/3]" />
+        </figure>
+        <div class="p-5">
+          <span class="inline-block text-xs font-semibold text-white bg-sky-600 rounded px-2 py-1">ラグビー</span>
+          <h3 class="mt-3 font-bold text-lg">富山大学医学部ラグビー部</h3>
+          <p class="mt-1 text-sm text-slate-600">継続指導・分析支援・コーチ派遣</p>
+        </div>
       </article>
-      <article class="p-6 rounded-2xl border bg-white shadow-sm">
-        <h3 class="font-semibold">市立C高校 × ○○社 × コーチD</h3>
-        <p class="mt-2 text-sm text-slate-600">設備更新と映像分析導入で失点30%減。</p>
+
+      <!-- 2 大阪教育大学ラグビー部 -->
+      <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+        <figure class="relative">
+          <img src="https://images.unsplash.com/photo-1601582585289-c7b3cd0b4f48?q=80&w=1600&auto=format&fit=crop"
+               alt="ラグビーの仮画像"
+               class="w-full h-full object-cover aspect-[16/10] sm:aspect-[4/3]" />
+        </figure>
+        <div class="p-5">
+          <span class="inline-block text-xs font-semibold text-white bg-sky-600 rounded px-2 py-1">ラグビー</span>
+          <h3 class="mt-3 font-bold text-lg">大阪教育大学ラグビー部</h3>
+          <p class="mt-1 text-sm text-slate-600">スキルアップ合宿・年間計画策定</p>
+        </div>
       </article>
-      <article class="p-6 rounded-2xl border bg-white shadow-sm">
-        <h3 class="font-semibold">私立E高校 × ○○社 × コーチF</h3>
-        <p class="mt-2 text-sm text-slate-600">講話・キャリア教育を通じて進路満足度を改善。</p>
+
+      <!-- 3 奈良教育大学ラグビー部 -->
+      <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+        <figure class="relative">
+          <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1600&auto=format&fit=crop"
+               alt="ラグビーの仮画像"
+               class="w-full h-full object-cover aspect-[16/10] sm:aspect-[4/3]" />
+        </figure>
+        <div class="p-5">
+          <span class="inline-block text-xs font-semibold text-white bg-sky-600 rounded px-2 py-1">ラグビー</span>
+          <h3 class="mt-3 font-bold text-lg">奈良教育大学ラグビー部</h3>
+          <p class="mt-1 text-sm text-slate-600">ゲーム分析・ポジション別指導</p>
+        </div>
+      </article>
+
+      <!-- 4 同志社大学アルティメット部 -->
+      <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+        <figure class="relative">
+          <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?q=80&w=1600&auto=format&fit=crop"
+               alt="アルティメットの仮画像"
+               class="w-full h-full object-cover aspect-[16/10] sm:aspect-[4/3]" />
+        </figure>
+        <div class="p-5">
+          <span class="inline-block text-xs font-semibold text-white bg-amber-600 rounded px-2 py-1">アルティメット</span>
+          <h3 class="mt-3 font-bold text-lg">同志社大学アルティメット部</h3>
+          <p class="mt-1 text-sm text-slate-600">戦術設計・フィジカルメニュー構築</p>
+        </div>
+      </article>
+
+      <!-- 5 名古屋大学ラグビー部 -->
+      <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+        <figure class="relative">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1600&auto=format&fit=crop"
+               alt="ラグビーの仮画像"
+               class="w-full h-full object-cover aspect-[16/10] sm:aspect-[4/3]" />
+        </figure>
+        <div class="p-5">
+          <span class="inline-block text-xs font-semibold text-white bg-sky-600 rounded px-2 py-1">ラグビー</span>
+          <h3 class="mt-3 font-bold text-lg">名古屋大学ラグビー部</h3>
+          <p class="mt-1 text-sm text-slate-600">年間計画・継続レポート運用</p>
+        </div>
+      </article>
+
+      <!-- 6 京都大学ラグビー部 -->
+      <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+        <figure class="relative">
+          <img src="https://images.unsplash.com/photo-1521417531039-94db0b6acf78?q=80&w=1600&auto=format&fit=crop"
+               alt="ラグビーの仮画像"
+               class="w-full h-full object-cover aspect-[16/10] sm:aspect-[4/3]" />
+        </figure>
+        <div class="p-5">
+          <span class="inline-block text-xs font-semibold text-white bg-sky-600 rounded px-2 py-1">ラグビー</span>
+          <h3 class="mt-3 font-bold text-lg">京都大学ラグビー部</h3>
+          <p class="mt-1 text-sm text-slate-600">テクニカル・データ可視化支援</p>
+        </div>
+      </article>
+
+      <!-- 7 奈良教育大学硬式野球部 -->
+      <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+        <figure class="relative">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop"
+               alt="野球の仮画像"
+               class="w-full h-full object-cover aspect-[16/10] sm:aspect-[4/3]" />
+        </figure>
+        <div class="p-5">
+          <span class="inline-block text-xs font-semibold text-white bg-emerald-600 rounded px-2 py-1">硬式野球</span>
+          <h3 class="mt-3 font-bold text-lg">奈良教育大学硬式野球部</h3>
+          <p class="mt-1 text-sm text-slate-600">指導体系整備・継続コーチング</p>
+        </div>
       </article>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="py-6 bg-slate-100 text-center text-sm text-slate-600">
-    © 2025 OTOBA. All rights reserved.
+    <!-- ボタン -->
+    <div class="mt-10 text-center">
+      <a href="cases.html" class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-semibold shadow-sm">
+        実績一覧を見る
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== Footer（必要なら共通化）===== -->
+  <footer class="mt-16 bg-gray-100 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+      © OTOBA
+    </div>
   </footer>
 </body>
 </html>
-
