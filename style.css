@@ -74,10 +74,12 @@ html { scroll-behavior: smooth; }
 /* =========================
    パネルの表示/非表示（切替）
 ========================= */
-.tab-panel{ display:none; margin-top:2rem; }
-.tab-panel.is-show{
-  display:block;
-  animation:fadeIn .35s ease;
+.tab-panel{ 
+  display:block; 
+  margin-top:2rem; 
+}
+.tab-panel.hidden{
+  display:none;
 }
 @keyframes fadeIn{
   from{ opacity:0; transform:translateY(8px); }
