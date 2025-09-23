@@ -198,3 +198,49 @@ html { scroll-behavior: smooth; }
   background:linear-gradient(180deg,#34d399 0%,#10b981 100%);
   box-shadow:0 6px 16px rgba(16,185,129,.35);
 }
+/* ====== Mobile tune for #getting-started ====== */
+@media (max-width: 640px) {
+
+  /* セクション余白を少し詰める */
+  #getting-started { padding-top: 1.25rem; }
+
+  /* タブバーを3等分グリッドに */
+  #getting-started .tabs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    width: 100%;
+    margin: 1rem auto 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  /* タブボタン：カード風にしてタップしやすく */
+  #getting-started .tab-btn{
+    width: 100%;
+    padding: .65rem .5rem;
+    font-size: .95rem;      /* 文字少し控えめ */
+    border-radius: 12px;    /* ピル → 丸角カード */
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(2,6,23,.05);
+    transform: none;        /* ホバーで浮かせない（スマホ） */
+  }
+
+  #getting-started .tab-btn:hover{
+    transform: none;
+  }
+
+  /* アクティブタブは色付き＆薄い影 */
+  #getting-started .tab-btn.is-active{
+    color:#fff;
+    box-shadow: 0 6px 14px rgba(2,6,23,.12);
+  }
+
+  /* パネルの上マージンを詰める */
+  #getting-started .tab-panel{
+    margin-top: 1rem;
+  }
+}
