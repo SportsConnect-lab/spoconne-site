@@ -255,74 +255,182 @@
   </section>
 
   <!-- ===== 始め方：対象をボタンで切替 ===== -->
-  <section id="getting-started" class="max-w-6xl mx-auto px-4 sm:px-6 pt-10">
-  <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-800 text-center leading-tight">
-    サービスの始め方
-  </h2>
-  <p class="mt-2 text-slate-600 text-center text-base sm:text-lg">
-    対象を選ぶと、最適なステップが表示されます。
-  </p>
-      <!-- tabs -->
-      <!-- tabs -->
-<div class="mt-6 flex justify-center" id="gs-tabs">
-<div class="inline-flex rounded-xl border border-slate-200 bg-white p-1 content-wrap">
-  <button type="button"
-    class="tab-btn px-5 py-2 rounded-xl text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50"
-    data-target="tab-teams" aria-controls="tab-teams">
-    チームの方
-  </button>
-  <button type="button"
-    class="tab-btn px-5 py-2 rounded-xl text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50"
-    data-target="tab-coaches" aria-controls="tab-coaches">
-    コーチの方
-  </button>
-  <button type="button"
-    class="tab-btn px-5 py-2 rounded-xl text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50"
-    data-target="tab-companies" aria-controls="tab-companies">
-    企業の方
-  </button>
-</div>
-
-
-
-<!-- panels -->
-<div class="mt-8 grid gap-6" id="gs-panels">
-  <div id="tab-teams" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6">
-    <!-- Teams の中身は今のままでOK（省略） -->
-    <ol class="grid gap-4">
-      <li class="flex gap-4"><span class="step">STEP1</span><div><p class="font-semibold">お問い合わせ</p><p class="text-slate-600 text-sm">問い合わせフォームから弊社へご連絡ください</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP2</span><div><p class="font-semibold">初回マッチング面談</p><p class="text-slate-600 text-sm">48時間以内に弊社担当からご連絡し、オンライン面談実施</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP3</span><div><p class="font-semibold">コーチマッチング</p><p class="text-slate-600 text-sm">チーム現状をヒアリングし、チームにあったコーチの選定</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP4</span><div><p class="font-semibold">派遣・実施</p><p class="text-slate-600 text-sm">スケジュール、内容調整し実施します。優秀なコーチから多く学んでください</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP5</span><div><p class="font-semibold">フォローアップ</p><p class="text-slate-600 text-sm">チームアンケートを取り、次回への改善を行なっていきます</p></div></li>
-    </ol>
-  </div>
-
-  <div id="tab-coaches" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6 hidden">
-    <!-- Coaches の中身（省略） -->
-    <ol class="grid gap-4">
-      <li class="flex gap-4"><span class="step">STEP1</span><div><p class="font-semibold">お問い合わせ</p><p class="text-slate-600 text-sm">簡単な経歴と共に問い合わせフォームから弊社へご連絡ください</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP2</span><div><p class="font-semibold">初回マッチング面談</p><p class="text-slate-600 text-sm">48時間以内に弊社担当からご連絡し、弊社とのマッチング面談を実施させていただきます</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP3</span><div><p class="font-semibold">ご登録</p><p class="text-slate-600 text-sm">面談後48時間以内にご登録連絡お送りします。双方にとって最適な形でのマッチングを大切にしておりますので、ご登録に至らないケースもございます</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP4</span><div><p class="font-semibold">研修・準備</p><p class="text-slate-600 text-sm">OTOBA運営方針の共有とコーチ向けガイドライン（指導マナー／安全管理／報告方法）説明会をオンラインにて実施（1時間程度）</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP5</span><div><p class="font-semibold">コーチング</p><p class="text-slate-600 text-sm">チームのご要望を元に、コーチの方にお伝えしマッチングし、現場に行っていただきます。</p></div></li>
-    </ol>
-  </div>
-
-  <div id="tab-companies" class="tab-panel rounded-2xl border border-slate-200 bg-white p-6 hidden">
-    <!-- Companies の中身（省略） -->
-    <ol class="grid gap-4">
-      <li class="flex gap-4"><span class="step">STEP1</span><div><p class="font-semibold">お問い合わせ</p><p class="text-slate-600 text-sm">問い合わせフォームから弊社へご連絡ください</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP2</span><div><p class="font-semibold">初回マッチング面談</p><p class="text-slate-600 text-sm">48時間以内に弊社担当からご連絡します。御社の具体的な目的やご要望をお伺いします。まずは話だけを聞いてみたいなども大歓迎です</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP3</span><div><p class="font-semibold">ご契約</p><p class="text-slate-600 text-sm">ヒアリング内容をもとに、最適なサポートプランをご提案し、プラン合意後、契約手続きを進めさせていただきます</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP4</span><div><p class="font-semibold">活動開始</p><p class="text-slate-600 text-sm">支援活動がスタートします。定期的なレポートで成果をご確認いただけます</p></div></li>
-      <li class="flex gap-4"><span class="step">STEP5</span><div><p class="font-semibold">活動報告・イベント実施</p><p class="text-slate-600 text-sm">活動報告を元に、次回への打ち手を一緒に策定していきます</p></div></li>
-    </ol>
-  </div>
-</div>
-
+  <!-- ===== サービスの始め方 ===== -->
+<section id="getting-started" class="py-16 sm:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <!-- 見出し -->
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-800">
+        サービスの始め方
+      </h2>
+      <p class="mt-3 text-slate-500">
+        対象を選ぶと、最適なステップが表示されます。
+      </p>
     </div>
-  </section>
+
+    <!-- タブ（横並びピル） -->
+    <div id="gs-tabs" class="mt-6 flex flex-wrap items-center justify-center gap-3">
+      <button class="gs-tab px-5 py-2.5 rounded-full font-semibold text-sm bg-white text-slate-700 border border-slate-200 shadow-sm aria-selected:bg-orange-500 aria-selected:text-white aria-selected:border-transparent"
+              data-target="gs-tab-teams"
+              aria-selected="true"
+              data-active="true">
+        チームの方
+      </button>
+      <button class="gs-tab px-5 py-2.5 rounded-full font-semibold text-sm bg-white text-slate-700 border border-slate-200 shadow-sm aria-selected:bg-sky-500 aria-selected:text-white aria-selected:border-transparent"
+              data-target="gs-tab-coaches"
+              aria-selected="false">
+        コーチの方
+      </button>
+      <button class="gs-tab px-5 py-2.5 rounded-full font-semibold text-sm bg-white text-slate-700 border border-slate-200 shadow-sm aria-selected:bg-emerald-500 aria-selected:text-white aria-selected:border-transparent"
+              data-target="gs-tab-companies"
+              aria-selected="false">
+        企業の方
+      </button>
+    </div>
+
+    <!-- パネル群 -->
+    <div id="gs-panels" class="mt-10">
+      <!-- チーム -->
+      <div id="gs-tab-teams" data-panel class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-8">
+        <ol class="space-y-5">
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP1</span>
+            <div>
+              <p class="font-bold text-slate-800">お問い合わせ</p>
+              <p class="text-slate-600 text-sm">問い合わせフォームから弊社へご連絡ください</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP2</span>
+            <div>
+              <p class="font-bold text-slate-800">初回マッチング面談</p>
+              <p class="text-slate-600 text-sm">48時間以内に担当からご連絡し、オンライン面談を実施</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP3</span>
+            <div>
+              <p class="font-bold text-slate-800">コーチマッチング</p>
+              <p class="text-slate-600 text-sm">チーム現状をアリングし、最適なコーチを選定</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP4</span>
+            <div>
+              <p class="font-bold text-slate-800">派遣・実施</p>
+              <p class="text-slate-600 text-sm">スケジュール／内容を調整し実施。優秀なコーチから多く学べます</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP5</span>
+            <div>
+              <p class="font-bold text-slate-800">フォローアップ</p>
+              <p class="text-slate-600 text-sm">アンケートを取り、次回への改善を行なっていきます</p>
+            </div>
+          </li>
+        </ol>
+        <div class="mt-8">
+          <a href="./contact.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
+            まずは相談してみる
+          </a>
+        </div>
+      </div>
+
+      <!-- コーチ -->
+      <div id="gs-tab-coaches" data-panel class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-8 hidden">
+        <ol class="space-y-5">
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP1</span>
+            <div>
+              <p class="font-bold text-slate-800">お問い合わせ／登録</p>
+              <p class="text-slate-600 text-sm">フォームから登録。希望カテゴリや条件をヒアリング</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP2</span>
+            <div>
+              <p class="font-bold text-slate-800">オンライン面談</p>
+              <p class="text-slate-600 text-sm">ご経歴・得意分野・稼働条件などをお伺いします</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP3</span>
+            <div>
+              <p class="font-bold text-slate-800">マッチング</p>
+              <p class="text-slate-600 text-sm">該当チーム／競技の案件をご紹介、条件をすり合わせ</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP4</span>
+            <div>
+              <p class="font-bold text-slate-800">契約・稼働開始</p>
+              <p class="text-slate-600 text-sm">契約の上、活動開始。報酬・KPI・レポートを整備</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP5</span>
+            <div>
+              <p class="font-bold text-slate-800">継続フォロー</p>
+              <p class="text-slate-600 text-sm">活動レビュー／次のマッチング提案などを実施</p>
+            </div>
+          </li>
+        </ol>
+        <div class="mt-8">
+          <a href="./contact.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
+            登録してみる
+          </a>
+        </div>
+      </div>
+
+      <!-- 企業 -->
+      <div id="gs-tab-companies" data-panel class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-8 hidden">
+        <ol class="space-y-5">
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP1</span>
+            <div>
+              <p class="font-bold text-slate-800">お問い合わせ</p>
+              <p class="text-slate-600 text-sm">目的（採用広報／CSV／人材育成 など）をお知らせください</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP2</span>
+            <div>
+              <p class="font-bold text-slate-800">ヒアリング・企画提案</p>
+              <p class="text-slate-600 text-sm">対象・期間・KPIなどを整理し、最適なプランをご提案</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP3</span>
+            <div>
+              <p class="font-bold text-slate-800">実施準備</p>
+              <p class="text-slate-600 text-sm">体制／安全管理／レポート設計などを整備</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP4</span>
+            <div>
+              <p class="font-bold text-slate-800">活動開始</p>
+              <p class="text-slate-600 text-sm">学生やチームと連携し、活動を推進</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-semibold text-slate-400 shrink-0 w-16">STEP5</span>
+            <div>
+              <p class="font-bold text-slate-800">効果可視化・次施策へ</p>
+              <p class="text-slate-600 text-sm">KPI／ダッシュボードで可視化し、改善・横展開を検討</p>
+            </div>
+          </li>
+        </ol>
+        <div class="mt-8">
+          <a href="./contact.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
+            まずは相談する
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- ===== 対象別セクション ===== -->
   <section id="for-teams" class="py-16 sm:py-24 bg-white">
@@ -544,41 +652,35 @@
 <!-- これを </body> の直前に貼り付け -->
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const section = document.getElementById('getting-started');
-  if (!section) return;
+  (function () {
+    const tabs   = document.querySelectorAll('#gs-tabs .gs-tab');
+    const panels = document.querySelectorAll('#gs-panels [data-panel]');
+    if (!tabs.length || !panels.length) return;
 
-  const buttons = [...section.querySelectorAll('.tab-btn')];
-  const panels  = [...section.querySelectorAll('.tab-panel')];
+    // 表示切替
+    function show(id) {
+      panels.forEach(p => p.classList.toggle('hidden', p.id !== id));
+      tabs.forEach(b => {
+        const on = b.dataset.target === id;
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    }
 
-  const color = {
-    'tab-teams':     ['bg-orange-500','text-white'],
-    'tab-coaches':   ['bg-sky-500','text-white'],
-    'tab-companies': ['bg-emerald-500','text-white'],
-  };
+    // クリック
+    tabs.forEach(b => {
+      b.addEventListener('click', e => {
+        e.preventDefault();
+        show(b.dataset.target);
+      });
+    });
 
-  function clear() {
-    buttons.forEach(b => b.classList.remove('bg-orange-500','bg-sky-500','bg-emerald-500','text-white','active','bg-brand'));
-    panels.forEach(p => p.classList.add('hidden'));
-  }
-
-  function show(id) {
-    clear();
-    const btn = buttons.find(b => b.dataset.target === id);
-    const panel = document.getElementById(id);
-    if (btn)  btn.classList.add(...color[id], 'active');   // ボタンに色
-    if (panel) panel.classList.remove('hidden');           // パネル表示
-  }
-
-  buttons.forEach(b => b.addEventListener('click', e => {
-    e.preventDefault();
-    show(b.dataset.target);
-  }));
-
-  // 初期表示はチーム
-  show('tab-teams');
-});
+    // 初期表示（data-active があれば優先）
+    const initial = document.querySelector('#gs-tabs .gs-tab[data-active="true"]')
+                  || tabs[0];
+    show(initial.dataset.target);
+  })();
 </script>
+
 
 
 </body>
