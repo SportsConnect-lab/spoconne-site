@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>お問い合わせ | OTOBA</title>
+  <title>お問い合わせ | スポコネ</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,9 +30,14 @@
 
 <body class="antialiased font-sans text-slate-800">
   <!-- Header -->
-  <header class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur border-b border-slate-200 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-extrabold text-lg sm:text-xl text-brand">OTOBA</a>
+  <header class="siteHeader fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- ロゴ部分 -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="images/sportsconnect-logo-big.png" alt="スポコネ Sports Connect ロゴ" class="h-10 w-auto">
+      <span class="sr-only">スポコネ Sports Connect</span>
+    </a>
+
       <nav class="hidden md:flex gap-6 text-sm font-medium">
         <a href="index.html" class="hover:text-brand">コンセプト</a>
         <a href="programs.html" class="hover:text-brand">プログラム</a>
@@ -138,7 +143,7 @@
 
   <!-- Footer -->
   <footer class="py-6 bg-slate-100 text-center text-sm text-slate-600">
-    © <span id="y"></span> OTOBA. All rights reserved.
+    © <span id="y"></span> Sports Connect. All rights reserved.
   </footer>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
