@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sportsconnect-lab.github.io/spoconne-site/sitemap.xml
