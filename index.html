@@ -166,16 +166,21 @@
 </header>
 
 <main id="top" class="pt-16">
-  <!-- ===== Hero Section ===== -->
+  <!-- ===== Hero Section (動画レスポンシブ対応) ===== -->
 <section class="relative overflow-hidden h-[90vh] flex items-center justify-center">
-  <!-- 背景動画 -->
-  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-    <source src="images/hero.mp4" type="video/mp4" />
-    <!-- 代替画像（動画非対応ブラウザ用） -->
+  <!-- 背景動画（PC用） -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover hidden sm:block">
+    <source src="images/hero-desktop.mp4" type="video/mp4" />
     <img src="images/rugby.photo.png" alt="背景" class="w-full h-full object-cover" />
   </video>
 
-  <!-- 黒のオーバーレイ（文字を読みやすく） -->
+  <!-- 背景動画（スマホ用） -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover block sm:hidden">
+    <source src="images/hero-mobile.mp4" type="video/mp4" />
+    <img src="images/rugby.photo.png" alt="背景" class="w-full h-full object-cover" />
+  </video>
+
+  <!-- 黒のオーバーレイ -->
   <div class="absolute inset-0 bg-black/40"></div>
 
   <!-- テキストコンテンツ -->
