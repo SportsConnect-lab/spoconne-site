@@ -166,44 +166,40 @@
 </header>
 
 <main id="top" class="pt-16">
-  <!-- ===== Hero Section (動画レスポンシブ対応) ===== -->
-<section class="relative overflow-hidden h-[90vh] flex items-center justify-center">
-  <!-- 背景動画（PC用） -->
-  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover hidden sm:block">
-    <source src="images/hero-desktop.mp4" type="video/mp4" />
-    <img src="images/rugby.photo.png" alt="背景" class="w-full h-full object-cover" />
-  </video>
+  <!-- ===== Hero（背景画像：共創フィールド） ===== -->
+<section class="relative hero">
+  <!-- 背景画像 -->
+  <img
+    src="images/hero.webp"
+    alt="企業と学生が芝生フィールドで握手する様子"
+    class="absolute inset-0 w-full h-full object-cover object-[center_45%]"
+    loading="eager"
+    decoding="async"
+  />
 
-  <!-- 背景動画（スマホ用） -->
-  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover block sm:hidden">
-    <source src="images/hero-mobile.mp4" type="video/mp4" />
-    <img src="images/rugby.photo.png" alt="背景" class="w-full h-full object-cover" />
-  </video>
-
-  <!-- 黒のオーバーレイ -->
+  <!-- 黒のオーバーレイ（文字を読みやすく） -->
   <div class="absolute inset-0 bg-black/40"></div>
 
-  <!-- テキストコンテンツ -->
-  <div class="relative z-10 text-center text-white px-4 sm:px-8">
-    <p class="text-sm sm:text-base mb-3 tracking-wide">
+  <!-- テキストエリア -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36 text-white">
+    <p class="text-xs sm:text-sm uppercase tracking-[.25em] mb-3 text-white/80">
       学生チーム × プロコーチ × 企業パートナー
     </p>
-    <h1 class="text-3xl sm:text-5xl font-bold leading-tight mb-4">
-      学生チームとプロコーチを、<br class="sm:hidden" />企業とのパートナー協定でつなぐ新しいモデル
+    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+      学生チームとプロコーチを、<br class="hidden sm:block"/>企業とのパートナー協定でつなぐ新しいモデル
     </h1>
-    <p class="text-base sm:text-lg text-white/90 mb-8">
+    <p class="mt-4 text-lg sm:text-xl text-white/90">
       チームの成長、コーチの活躍、企業の社会的価値とブランドを同時に前進させる。
     </p>
 
-    <div class="flex flex-wrap justify-center gap-3">
-      <a href="#team" class="px-5 py-2 bg-orange-500 hover:bg-orange-600 rounded-full font-semibold text-white">チームの方</a>
-      <a href="#coach" class="px-5 py-2 bg-blue-500 hover:bg-blue-600 rounded-full font-semibold text-white">コーチの方</a>
-      <a href="#company" class="px-5 py-2 bg-green-500 hover:bg-green-600 rounded-full font-semibold text-white">企業の方</a>
-      <a href="#start" class="px-5 py-2 bg-purple-500 hover:bg-purple-600 rounded-full font-semibold text-white">始め方</a>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#for-teams" class="px-5 py-3 rounded-xl bg-orange-500 text-white font-semibold hover:bg-orange-600 hover:scale-105 transition">チームの方</a>
+      <a href="#for-coaches" class="px-5 py-3 rounded-xl font-semibold text-white bg-sky-500 hover:bg-sky-600 hover:scale-105 transition">コーチの方</a>
+      <a href="#for-companies" class="px-5 py-3 rounded-xl font-semibold text-white bg-emerald-500 hover:bg-emerald-600 hover:scale-105 transition">企業の方</a>
+      <a href="#getting-started" class="px-5 py-3 rounded-xl font-semibold text-white bg-purple-500 hover:bg-purple-600 hover:scale-105 transition">始め方</a>
     </div>
   </div>
 </section>
-
 
   <!-- ===== 中腹：課題と解決策（対象別） ===== -->
   <section id="needs" class="reveal py-16 sm:py-24 bg-white">
